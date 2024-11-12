@@ -13,9 +13,12 @@ public class NoteLine : MonoBehaviour
 
     private GameObject[] _notes;
 
+
+
     // Start is called before the first frame update
     private void Awake()
     {
+        transform.localScale = Vector3.one;
         _notes = new GameObject[maxNoteInLine];
         for (int i = 0; i < maxNoteInLine; i++) {
             GameObject note = Instantiate(notePrefab, this.transform);
@@ -33,6 +36,7 @@ public class NoteLine : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
 
     }
 
@@ -42,13 +46,10 @@ public class NoteLine : MonoBehaviour
         Vector3 lerpvec = new Vector3(1f, 1f, 1f);
         while (transform.localScale.z < 9.9f)
         {
-            Debug.Log("localvec" + transform.localScale);
 
             float lerpz = Mathf.Lerp(transform.localScale.z, linescale.z,  0.4f);
             lerpvec = new Vector3(1, 1, lerpz);
             lerpvec -= transform.localScale;
-
-            Debug.Log("lerpvec" + lerpvec);
 
             transform.localScale += lerpvec;
             yield return new WaitForSeconds(0.05f);
