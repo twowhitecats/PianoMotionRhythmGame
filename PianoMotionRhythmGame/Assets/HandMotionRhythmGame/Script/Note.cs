@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool canBePressed;
 
     void Awake()
     {
-        gameObject.SetActive(false);
-        
+        gameObject.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+
     }
     void Start()
     {
@@ -19,6 +19,29 @@ public class Note : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
+        {
+            if (canBePressed)
+            {
+                gameObject.SetActive(false);
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Activator")
+        {
+            canBePressed = true;
+            Debug.Log(canBePressed);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Activator")
+        {
+            canBePressed = false;
+        }
     }
 }
