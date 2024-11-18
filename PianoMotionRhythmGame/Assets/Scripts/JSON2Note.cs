@@ -12,6 +12,8 @@ public class JSON2Note : MonoBehaviour
     public bool running;
 
     private int timingIndex;
+
+    public List<GameObject> lanes;
     void Start()
     {
         currentTime = 0;
@@ -32,6 +34,7 @@ public class JSON2Note : MonoBehaviour
                 for(int i = 0; i < _noteinfos.Count; i++)
                 {
                     _notes += _noteinfos[i].button + " in " + _noteinfos[i].lane + ", ";
+                    //lanes[_noteinfos[i].lane].SpawnNote(button=_noteinfos[i].button);
                 }
 
                 Debug.Log(_time + ": " + _notes);
