@@ -65,7 +65,7 @@ public class JSONParser : MonoBehaviour
 public struct NoteTiming
 {
     public float time;
-    public NoteInfo[] notes;
+    public List<NoteInfo> notes;
 }
 
 [System.Serializable]

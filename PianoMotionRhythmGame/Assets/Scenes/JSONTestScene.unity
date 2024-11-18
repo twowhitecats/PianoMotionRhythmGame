@@ -342,6 +342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1900099543}
   - component: {fileID: 1900099542}
+  - component: {fileID: 1900099544}
   m_Layer: 0
   m_Name: JSON2Note
   m_TagString: Untagged
@@ -361,6 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0101ec2d89f4f3a4ba4badc2fa1608b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fileName: TestJson.json
   timings:
   - time: 1
     notes:
@@ -393,6 +395,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1900099544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900099541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb5ae4955aabaf4586e68ec1fa567ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTime: 0
+  running: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
