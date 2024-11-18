@@ -16,6 +16,7 @@ public class Button3DController : MonoBehaviour
 
     public bool islhand;
     public bool isrhand;
+    private Note note;
 
 
 
@@ -41,7 +42,11 @@ public class Button3DController : MonoBehaviour
 
             if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
             {
-                line_manager.Get_Note().GetComponent<Note>().Timing_Judgment();
+                note = line_manager.Get_Note().GetComponent<Note>();
+                if (note != null)
+                {
+                    note.Timing_Judgment();
+                }
             }
         }
         else if(isrhand)
@@ -54,7 +59,11 @@ public class Button3DController : MonoBehaviour
 
             if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
             {
-                line_manager.Get_Note().GetComponent<Note>().Timing_Judgment();
+                note = line_manager.Get_Note().GetComponent<Note>();
+                if (note != null)
+                {
+                    note.Timing_Judgment();
+                }
             }
         }
         else
