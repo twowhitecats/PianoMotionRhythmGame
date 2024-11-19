@@ -1,11 +1,6 @@
-using JetBrains.Annotations;
-using Oculus.Interaction;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.CompilerServices;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class JSONParser : MonoBehaviour

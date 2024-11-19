@@ -344,7 +344,7 @@ GameObject:
   - component: {fileID: 1900099542}
   - component: {fileID: 1900099544}
   m_Layer: 0
-  m_Name: JSON2Note
+  m_Name: JSONtoNote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -409,6 +409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentTime: 0
   running: 0
+  lanes: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
