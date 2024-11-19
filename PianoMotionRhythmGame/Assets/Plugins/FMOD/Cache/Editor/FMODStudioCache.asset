@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/HandMotionRhythmGame/audio-manager-fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638675752092380629
+  lastModified: 638676227777189873
   FileSizes:
   - Name: Desktop
     Value: 1036
@@ -35,7 +35,7 @@ MonoBehaviour:
   Path: Assets/HandMotionRhythmGame/audio-manager-fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638675752092405615
+  lastModified: 638676227777199845
   FileSizes:
   - Name: Desktop
     Value: 712
@@ -61,5 +61,5 @@ MonoBehaviour:
   - {fileID: -6898335981068132378}
   StringsBanks:
   - {fileID: -3472934248635882534}
-  cacheTime: 638675752092405615
+  cacheTime: 638676227777199845
   cacheVersion: 131620
