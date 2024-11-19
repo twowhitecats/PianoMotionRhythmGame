@@ -17,6 +17,7 @@ public class JSON2Note : MonoBehaviour
         currentTime = 0;
         timingIndex = 0;
         parser = GetComponent<JSONParser>();
+        parser.LoadJSON();
     }
 
     void Update()
@@ -24,7 +25,7 @@ public class JSON2Note : MonoBehaviour
         if(running)
         {
             currentTime += Time.deltaTime;
-            if(currentTime > parser.timings[timingIndex].time)
+            if(timingIndex < parser.timings.Count && currentTime > parser.timings[timingIndex].time)
             {
                 string _time = parser.timings[timingIndex].time.ToString();
                 var _noteinfos = parser.timings[timingIndex].notes;
@@ -36,7 +37,7 @@ public class JSON2Note : MonoBehaviour
                 }
 
                 Debug.Log(_time + ": " + _notes);
-                if (timingIndex < parser.timings.Count - 1)
+                if (timingIndex < parser.timings.Count)
                 {
                     timingIndex = timingIndex + 1;
                 }
