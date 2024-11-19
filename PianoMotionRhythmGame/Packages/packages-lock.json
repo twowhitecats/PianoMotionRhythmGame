@@ -1,11 +1,5 @@
 {
   "dependencies": {
-    "com.meta.xr.sdk.acoustics": {
-      "version": "file:C:/Users/a/Downloads/meta_xr_audio_sdk_fmod_69.0/FMOD/Unity/MetaXRSDKAcousticsFMOD.tgz",
-      "depth": 0,
-      "source": "local-tarball",
-      "dependencies": {}
-    },
     "com.meta.xr.sdk.core": {
       "version": "69.0.1",
       "depth": 0,
