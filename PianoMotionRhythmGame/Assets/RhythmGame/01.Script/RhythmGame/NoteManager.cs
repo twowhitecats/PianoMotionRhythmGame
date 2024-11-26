@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.Pool;
 
 namespace RhythmGame
@@ -20,6 +21,7 @@ namespace RhythmGame
 
         private int index = 0;
         public float currentTime;
+        [Range(3,12)] public float speedMultiplier = 6.0f;
 
         public static NoteManager instance;
 
@@ -40,7 +42,7 @@ namespace RhythmGame
 
         private void Start()
         {
-            SpawnNote(0);
+            //SpawnNote(0);
         }
 
         private void Update()
@@ -52,6 +54,14 @@ namespace RhythmGame
             }
             if(gameStarted)
             {
+                if(parser.chart.Count != 0 && index < parser.chart.Count && currentTime >= parser.chart[index].targetTime-2f)
+                {
+                    for (int i = 0; i < parser.chart[index].notes.Count; i++)
+                    {
+                        SpawnNote(parser.chart[index].notes[i], parser.chart[index].targetTime);
+                    }
+                    index++;
+                }
             }
         }
 
@@ -67,9 +77,13 @@ namespace RhythmGame
             }
         }
 
-        public void SpawnNote(int index)
+        private void SpawnNote(int laneNum)
         {
-            lanes[index].SpawnNote();
+            lanes[laneNum].SpawnNote(5f, KeyCode.Space);
+        }
+        public void SpawnNote(NoteInfo info, float targetTime)
+        {
+            lanes[info.laneNum].SpawnNote(targetTime, info.button);
         }
 
         private void InitPool()

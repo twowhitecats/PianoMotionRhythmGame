@@ -309,7 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069c7595e40b8ba4f8a2e8e90f562638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStarted: 0
+  gameStarted: 1
   obj_note: {fileID: 7057802410097846634, guid: a71a3f76f23c2ab428c1b1f788859358, type: 3}
   lanes:
   - {fileID: 1236636483}
@@ -323,6 +323,7 @@ MonoBehaviour:
   defaultPoolSize: 30
   maxPoolSize: 100
   currentTime: 0
+  speedMultiplier: 3
 --- !u!1 &108130764
 GameObject:
   m_ObjectHideFlags: 0
@@ -11580,12 +11581,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileName: TestJson.json
-  timings:
-  - startTime: 0
-    targetTime: 5
+  chart:
+  - targetTime: 5
     notes:
-    - lane: 0
-      button: x
+    - laneNum: 0
+      button: 32
+  - targetTime: 6
+    notes:
+    - laneNum: 1
+      button: 32
+  - targetTime: 7
+    notes:
+    - laneNum: 2
+      button: 32
+  - targetTime: 8
+    notes:
+    - laneNum: 3
+      button: 32
+  - targetTime: 9
+    notes:
+    - laneNum: 4
+      button: 32
+  - targetTime: 10
+    notes:
+    - laneNum: 5
+      button: 32
+  - targetTime: 12
+    notes:
+    - laneNum: 1
+      button: 32
+    - laneNum: 5
+      button: 32
 --- !u!1 &1901073213
 GameObject:
   m_ObjectHideFlags: 0

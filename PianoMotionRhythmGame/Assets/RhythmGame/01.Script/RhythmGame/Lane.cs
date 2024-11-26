@@ -33,10 +33,12 @@ namespace RhythmGame
         {
             this.noteManager = noteManager;
         }
-        public void SpawnNote()
+        public void SpawnNote(float targetTime, KeyCode code)
         {
             var go = noteManager.NotePool.Get();
             go.transform.position = this.spawnPoint.position;
+            go.GetComponent<Note>().targetTime = targetTime;
+            go.GetComponent<Note>().keyToPress = code;
             go.GetComponent<Note>().SetSpawnTime();
         }
     }

@@ -11,7 +11,6 @@ namespace RhythmGame
         public KeyCode keyToPress;
         public float targetTime = 5;
 
-        [Range(3,12)] public float speedMultiplier = 1f;
         public float speed;
         public float spawnTime;
 
@@ -19,7 +18,7 @@ namespace RhythmGame
         {
             float distance = 920;
             float travelTime = distance / speed;
-            float adjustedTravelTime = travelTime / speedMultiplier;
+            float adjustedTravelTime = travelTime / NoteManager.instance.speedMultiplier;
             spawnTime = targetTime - adjustedTravelTime;
         }
 
@@ -30,7 +29,7 @@ namespace RhythmGame
             {
                 return;
             }
-            float y = 480 - (speed * speedMultiplier * elapsedTime);
+            float y = 480 - (speed * NoteManager.instance.speedMultiplier * elapsedTime);
             this.GetComponent<RectTransform>().anchoredPosition = new Vector2(this.GetComponent<RectTransform>().anchoredPosition.x, y);
 
             if(this.GetComponent<RectTransform>().anchoredPosition.y <= -440)

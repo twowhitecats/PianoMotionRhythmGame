@@ -8,12 +8,12 @@ namespace RhythmGame
     public class JSONParser : MonoBehaviour
     {
         public string fileName = "TestJson.json";
-        public List<NoteTiming> timings;
+        public List<NoteTiming> chart;
 
         public void GenerateJSON()
         {
             Wrapper<NoteTiming> data = new Wrapper<NoteTiming>();
-            data.data = timings;
+            data.data = chart;
 
             string jsonData = JsonUtility.ToJson(data, true);
             string path = Path.Combine(Application.streamingAssetsPath, "JSON/" + fileName);
@@ -24,7 +24,7 @@ namespace RhythmGame
         }
         public void LoadJSON()
         {
-            timings.Clear();
+            chart.Clear();
             string path = Path.Combine(Application.streamingAssetsPath, "JSON/" + fileName);
             string jsonData = File.ReadAllText(path);
 
@@ -37,7 +37,7 @@ namespace RhythmGame
             {
                 for (int i = 0; i < data.data.Count; i++)
                 {
-                    timings.Add(data.data[i]);
+                    chart.Add(data.data[i]);
                 }
             }
         }
@@ -52,7 +52,6 @@ namespace RhythmGame
     [System.Serializable]
     public struct NoteTiming
     {
-        public float startTime;
         public float targetTime;
         public List<NoteInfo> notes;
     }
@@ -60,7 +59,7 @@ namespace RhythmGame
     [System.Serializable]
     public struct NoteInfo
     {
-        public int lane;
-        public string button;
+        public int laneNum;
+        public KeyCode button;
     }
 }
