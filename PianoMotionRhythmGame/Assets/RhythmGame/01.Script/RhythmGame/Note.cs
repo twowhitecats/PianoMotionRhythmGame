@@ -1,3 +1,4 @@
+using Meta.XR.MultiplayerBlocks.Fusion.Editor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,15 +33,17 @@ namespace RhythmGame
             float y = 480 - (speed * NoteManager.instance.speedMultiplier * elapsedTime);
             this.GetComponent<RectTransform>().anchoredPosition = new Vector2(this.GetComponent<RectTransform>().anchoredPosition.x, y);
 
-            if(this.GetComponent<RectTransform>().anchoredPosition.y <= -440)
+            if(this.GetComponent<RectTransform>().anchoredPosition.y <= -540)
             {
-                Debug.Log(NoteManager.instance.currentTime);
+                Miss();
             }
+        }
 
-            if(this.GetComponent<RectTransform>().anchoredPosition.y <= -480)
-            {
-                Pool.Release(this.gameObject);
-            }
+        private void Miss()
+        {
+            Pool.Release(this.gameObject);
+            Debug.Log("Miss");
+            //Remove From notesInLan
         }
     }
 }

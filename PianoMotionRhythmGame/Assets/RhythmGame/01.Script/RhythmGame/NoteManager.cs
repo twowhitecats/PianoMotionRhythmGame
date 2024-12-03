@@ -8,12 +8,13 @@ namespace RhythmGame
     public class NoteManager : MonoBehaviour
     {
         public bool gameStarted;
+        [SerializeField] private bool testing;
 
         [SerializeField] private GameObject obj_note;
 
-        [SerializeField] private List<Lane> lanes = new List<Lane>();
         [SerializeField] private Transform pool;
         [SerializeField] private JSONParser parser;
+        [SerializeField] private LaneManager laneManager;
 
         public IObjectPool<GameObject> NotePool { get; private set; }
         [SerializeField] private int defaultPoolSize;
@@ -36,7 +37,6 @@ namespace RhythmGame
                 Destroy(this.gameObject);
             }
 
-            SetupLanes();
             InitPool();
         }
 
@@ -48,9 +48,32 @@ namespace RhythmGame
         private void Update()
         {
             currentTime = Time.time;
-            if(Input.GetKeyDown(KeyCode.Space))
+            if(testing)
             {
-                SpawnNote(0);
+                if(Input.GetKeyDown(KeyCode.Alpha1))
+                {
+                    laneManager.SpawnNote(0, currentTime + 2f);
+                }
+                if(Input.GetKeyDown(KeyCode.Alpha2))
+                {
+                    laneManager.SpawnNote(1, currentTime + 2f);
+                }
+                if(Input.GetKeyDown(KeyCode.Alpha3))
+                {
+                    laneManager.SpawnNote(2, currentTime + 2f);
+                }
+                if(Input.GetKeyDown(KeyCode.Alpha4))
+                {
+                    laneManager.SpawnNote(3, currentTime + 2f);
+                }
+                if(Input.GetKeyDown(KeyCode.Alpha5))
+                {
+                    laneManager.SpawnNote(4, currentTime + 2f);
+                }
+                if(Input.GetKeyDown(KeyCode.Alpha6))
+                {
+                    laneManager.SpawnNote(5, currentTime + 2f);
+                }
             }
             if(gameStarted)
             {
@@ -58,32 +81,11 @@ namespace RhythmGame
                 {
                     for (int i = 0; i < parser.chart[index].notes.Count; i++)
                     {
-                        SpawnNote(parser.chart[index].notes[i], parser.chart[index].targetTime);
+                        laneManager.SpawnNote(parser.chart[index].notes[i], parser.chart[index].targetTime);
                     }
                     index++;
                 }
             }
-        }
-
-        private void SetupLanes()
-        {
-            foreach(Transform obj in transform)
-            {
-                if(obj.name.Contains("Lane"))
-                {
-                    lanes.Add(obj.GetComponent<Lane>());
-                    obj.GetComponent<Lane>().SetNoteManager(this);
-                }
-            }
-        }
-
-        private void SpawnNote(int laneNum)
-        {
-            lanes[laneNum].SpawnNote(5f, KeyCode.Space);
-        }
-        public void SpawnNote(NoteInfo info, float targetTime)
-        {
-            lanes[info.laneNum].SpawnNote(targetTime, info.button);
         }
 
         private void InitPool()
