@@ -304,8 +304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069c7595e40b8ba4f8a2e8e90f562638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameStarted: 0
-  testing: 1
+  gameStarted: 1
+  testing: 0
   obj_note: {fileID: 7057802410097846634, guid: a71a3f76f23c2ab428c1b1f788859358, type: 3}
   pool: {fileID: 1086801742}
   parser: {fileID: 1900099544}
