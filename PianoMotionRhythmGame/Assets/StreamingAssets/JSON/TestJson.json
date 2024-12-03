@@ -1,0 +1,71 @@
+{
+    "data": [
+        {
+            "targetTime": 5.0,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 32
+                }
+            ]
+        },
+        {
+            "targetTime": 5.5,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 32
+                }
+            ]
+        },
+        {
+            "targetTime": 6.0,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 32
+                }
+            ]
+        },
+        {
+            "targetTime": 6.5,
+            "notes": [
+                {
+                    "laneNum": 3,
+                    "button": 32
+                }
+            ]
+        },
+        {
+            "targetTime": 7.0,
+            "notes": [
+                {
+                    "laneNum": 4,
+                    "button": 32
+                }
+            ]
+        },
+        {
+            "targetTime": 7.5,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 32
+                }
+            ]
+        },
+        {
+            "targetTime": 8.0,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 32
+                },
+                {
+                    "laneNum": 5,
+                    "button": 32
+                }
+            ]
+        }
+    ]
+}
