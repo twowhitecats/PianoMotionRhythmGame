@@ -11,13 +11,13 @@ using UnityEngine.InputSystem;
 public class AudioManager : MonoBehaviour
 {
     [Header("Instance")]
-    static AudioManager _instance;
+    public static AudioManager _instance;
 
     public AudioManager Instance()
     {
         if (_instance == null)
         {
-            _instance = new AudioManager();
+            _instance = this;
         }
         return _instance;
     }
@@ -53,6 +53,8 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
+        Instance();
+
         Application.targetFrameRate = 60;
 
         musicInstance = FMODUnity.RuntimeManager.CreateInstance(musicEventName);
@@ -61,6 +63,7 @@ public class AudioManager : MonoBehaviour
         sfxInstance.setVolume(sfxVolume);
         ticktime = (60 * 1000) / BPM;
 
+        StartMusic();
     }
 
 
