@@ -338,7 +338,7 @@ retry:
 
             if (dspBufferLength > 0 && dspBufferCount > 0)
             {
-                result = coreSystem.setDSPBufferSize(dspBufferLength, dspBufferCount);
+                result = coreSystem.setDSPBufferSize(64,2);
                 CheckInitResult(result, "FMOD.System.setDSPBufferSize");
             }
 
