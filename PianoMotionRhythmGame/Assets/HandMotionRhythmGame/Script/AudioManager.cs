@@ -1,4 +1,6 @@
 using FMOD;
+using FMOD.Studio;
+using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +9,7 @@ using System.Runtime.InteropServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Profiling.RawFrameDataView;
 
 public class AudioManager : MonoBehaviour
 {
@@ -63,7 +66,7 @@ public class AudioManager : MonoBehaviour
         sfxInstance.setVolume(sfxVolume);
         ticktime = (60 * 1000) / BPM;
 
-        StartMusic();
+        //StartMusic();
     }
 
 
@@ -151,5 +154,39 @@ public class AudioManager : MonoBehaviour
     {
         musicInstance.getTimelinePosition(out int position);
         return position;
+    }
+
+    public int GetEventLength()
+    {
+        FMOD.Studio.EventDescription eventDescription;
+
+        // 이벤트 설명 가져오기
+        musicInstance.getDescription(out eventDescription);
+
+        // 이벤트의 총 길이 가져오기
+        int length;
+        eventDescription.getLength(out length); // 길이는 밀리초 단위로 반환됨
+
+        return length;
+    }
+
+    public void SetTimelinePosition(int position)
+    {
+        if (musicInstance.isValid())
+        {
+            FMOD.RESULT result = musicInstance.setTimelinePosition(position);
+            if (result == FMOD.RESULT.OK)
+            {
+                UnityEngine.Debug.Log($"Moved to {position} ms on the timeline.");
+            }
+            else
+            {
+                UnityEngine.Debug.LogError($"Failed to set timeline position: {result}");
+            }
+        }
+        else
+        {
+            UnityEngine.Debug.LogError("Event instance is not valid.");
+        }
     }
 }

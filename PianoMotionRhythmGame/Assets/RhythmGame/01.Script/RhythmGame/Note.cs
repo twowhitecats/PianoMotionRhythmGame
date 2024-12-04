@@ -35,6 +35,7 @@ namespace RhythmGame
 
             if(this.GetComponent<RectTransform>().anchoredPosition.y <= -540)
             {
+                speed = 0f;
                 Miss();
             }
         }
