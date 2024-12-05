@@ -53,19 +53,6 @@
                     "button": 32
                 }
             ]
-        },
-        {
-            "targetTime": 8.0,
-            "notes": [
-                {
-                    "laneNum": 1,
-                    "button": 32
-                },
-                {
-                    "laneNum": 5,
-                    "button": 32
-                }
-            ]
         }
     ]
 }

@@ -8,27 +8,35 @@ namespace RhythmGame
 {
     public class NoteManager : MonoBehaviour
     {
+        public static NoteManager instance;
+
         public Mode currentMode;
         public bool gameStart;
+        public float currentTime;
 
+        [Header("Prefab")]
         [SerializeField] private GameObject obj_note;
 
+        [Header("References")]
         [SerializeField] private Transform pool;
-        private List<GameObject> activeInPool = new List<GameObject>();
-
         [SerializeField] private JSONParser parser;
         [SerializeField] private LaneManager laneManager;
         [SerializeField] private MusicController MusicController;
 
-        public IObjectPool<GameObject> NotePool { get; private set; }
+        [Header("ObjectPooling")]
         [SerializeField] private int defaultPoolSize;
         [SerializeField] private int maxPoolSize;
+        public List<GameObject> activeInPool = new List<GameObject>();
+        public IObjectPool<GameObject> NotePool { get; private set; }
 
-        private int index = 0;
-        public float currentTime;
+        [Header("Editing")]
+        [SerializeField] private float spawnOffset;
+        [SerializeField] private float despawnOffset;
+
+        [Header("Setting")]
         [Range(3,12)] public float speedMultiplier = 6.0f;
 
-        public static NoteManager instance;
+        private int index = 0;
 
         private void Awake()
         {
@@ -58,6 +66,7 @@ namespace RhythmGame
             else if(currentMode == Mode.Editing)
             {
                 currentTime = MusicController.GetCurrentTime()/1000f;
+                ManageNoteByTime();
             }
             else if(currentMode == Mode.Game && gameStart)
             {
@@ -105,6 +114,37 @@ namespace RhythmGame
                 index++;
             }
         }
+        private void ManageNoteByTime()
+        {
+            foreach(NoteTiming noteData in parser.chart)
+            {
+                if(Mathf.Abs(noteData.targetTime - currentTime) <= spawnOffset)
+                {
+                    SpawnNoteByTime(noteData);
+                }
+            }
+
+            for (int i = activeInPool.Count - 1; i >= 0; i--)
+            {
+                GameObject note = activeInPool[i];
+                float noteTime = note.GetComponent<Note>().targetTime;
+
+                if (Mathf.Abs(noteTime - currentTime) >= despawnOffset)
+                {
+                    NotePool.Release(note);
+                }
+            }
+        }
+        private void SpawnNoteByTime(NoteTiming noteData)
+        {
+            for (int i = 0; i < noteData.notes.Count; i++)
+            {
+                if (activeInPool.Exists(n => n.GetComponent<Note>().targetTime == noteData.targetTime))
+                    continue;
+
+                laneManager.SpawnNote(noteData.notes[i], noteData.targetTime);
+            }
+        }
 
         private void InitPool()
         {
@@ -142,7 +182,6 @@ namespace RhythmGame
             Destroy(item);
             activeInPool.Remove(item);
         }
-
         public void ResetIndex() => index = 0;
     }
 }

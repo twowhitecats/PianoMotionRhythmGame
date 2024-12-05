@@ -306,6 +306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentMode: 1
   gameStart: 0
+  currentTime: 0
   obj_note: {fileID: 7057802410097846634, guid: a71a3f76f23c2ab428c1b1f788859358, type: 3}
   pool: {fileID: 1086801742}
   parser: {fileID: 1900099544}
@@ -313,7 +314,9 @@ MonoBehaviour:
   MusicController: {fileID: 1133086673}
   defaultPoolSize: 30
   maxPoolSize: 100
-  currentTime: 0
+  activeInPool: []
+  spawnOffset: 1
+  despawnOffset: 1
   speedMultiplier: 6
 --- !u!1 &108130764
 GameObject:
@@ -12916,12 +12919,6 @@ MonoBehaviour:
     notes:
     - laneNum: 5
       button: 32
-  - targetTime: 8
-    notes:
-    - laneNum: 1
-      button: 32
-    - laneNum: 5
-      button: 32
 --- !u!1 &1901073213
 GameObject:
   m_ObjectHideFlags: 0
@@ -14658,8 +14655,8 @@ SceneRoots:
   m_Roots:
   - {fileID: 280425496}
   - {fileID: 1992229492}
+  - {fileID: 770968842}
   - {fileID: 1900099543}
   - {fileID: 1133086672}
   - {fileID: 81187863}
   - {fileID: 1795551902}
-  - {fileID: 770968842}

@@ -39,6 +39,7 @@ namespace RhythmGame
         public void SpawnNote(float targetTime, KeyCode code)
         {
             var go = NoteManager.instance.NotePool.Get();
+
             go.transform.position = this.spawnPoint.position;
             go.GetComponent<Note>().targetTime = targetTime;
             go.GetComponent<Note>().keyToPress = code;
