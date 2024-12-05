@@ -53,12 +53,12 @@ namespace RhythmGame
                 }
             }
         }
-        private bool CheckEnd()
+        protected bool CheckEnd()
         {
             return this.GetComponent<RectTransform>().anchoredPosition.y <= -500;
         }
 
-        private void Move()
+        protected void Move()
         {
             float y = 480 - (speed * NoteManager.instance.speedMultiplier * elapsedTime);
             this.GetComponent<RectTransform>().anchoredPosition = new Vector2(this.GetComponent<RectTransform>().anchoredPosition.x, y);

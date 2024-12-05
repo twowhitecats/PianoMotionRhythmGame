@@ -18,7 +18,7 @@ namespace RhythmGame
         [SerializeField] private GameObject obj_note;
 
         [Header("References")]
-        [SerializeField] private Transform pool;
+        [SerializeField] private Transform notePool;
         [SerializeField] private JSONParser parser;
         [SerializeField] private LaneManager laneManager;
         [SerializeField] private MusicController MusicController;
@@ -49,7 +49,7 @@ namespace RhythmGame
                 Destroy(this.gameObject);
             }
 
-            InitPool();
+            InitNotePool();
         }
 
         private void Start()
@@ -129,7 +129,7 @@ namespace RhythmGame
                 GameObject note = activeInPool[i];
                 float noteTime = note.GetComponent<Note>().targetTime;
 
-                if (Mathf.Abs(noteTime - currentTime) >= despawnOffset)
+                if (currentTime <= noteTime - despawnOffset)
                 {
                     NotePool.Release(note);
                 }
@@ -146,23 +146,23 @@ namespace RhythmGame
             }
         }
 
-        private void InitPool()
+        private void InitNotePool()
         {
-            NotePool = new ObjectPool<GameObject>(CreatePooledItem, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject,
+            NotePool = new ObjectPool<GameObject>(CreatePooledNote, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject,
                 true, defaultPoolSize, maxPoolSize);
 
             for(int i = 0; i < defaultPoolSize; i++)
             {
-                Note note = CreatePooledItem().GetComponent<Note>();
+                Note note = CreatePooledNote().GetComponent<Note>();
                 note.Pool.Release(note.gameObject);
             }
         }
 
-        private GameObject CreatePooledItem()
+        private GameObject CreatePooledNote()
         {
             GameObject item = Instantiate(obj_note);
             item.GetComponent<Note>().Pool = this.NotePool;
-            item.transform.SetParent(pool.transform, false);
+            item.transform.SetParent(notePool, false);
             return item;
         }
 
