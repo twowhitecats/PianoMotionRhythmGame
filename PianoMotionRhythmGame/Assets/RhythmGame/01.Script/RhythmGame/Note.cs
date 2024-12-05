@@ -15,6 +15,8 @@ namespace RhythmGame
         public float speed;
         public float spawnTime;
 
+        private float elapsedTime;
+
         public void SetSpawnTime()
         {
             float distance = 920;
@@ -25,26 +27,48 @@ namespace RhythmGame
 
         private void Update()
         {
-            float elapsedTime = NoteManager.instance.currentTime - spawnTime;
-            if(elapsedTime < 0)
+            elapsedTime = NoteManager.instance.currentTime - spawnTime;
+            if(NoteManager.instance.currentMode == Mode.Game || NoteManager.instance.currentMode == Mode.Test)
             {
-                return;
-            }
-            float y = 480 - (speed * NoteManager.instance.speedMultiplier * elapsedTime);
-            this.GetComponent<RectTransform>().anchoredPosition = new Vector2(this.GetComponent<RectTransform>().anchoredPosition.x, y);
+                if(elapsedTime < 0)
+                {
+                    return;
+                }
 
-            if(this.GetComponent<RectTransform>().anchoredPosition.y <= -540)
-            {
-                speed = 0f;
-                Miss();
+                Move();
+
+                if(CheckEnd())
+                {
+                    speed = 0;
+                    Miss();
+                }
             }
+            else if(NoteManager.instance.currentMode == Mode.Editing)
+            {
+                Move();
+
+                if(CheckEnd())
+                {
+                    Pool.Release(this.gameObject);
+                }
+            }
+        }
+        private bool CheckEnd()
+        {
+            return this.GetComponent<RectTransform>().anchoredPosition.y <= -500;
+        }
+
+        private void Move()
+    {
+        float y = 480 - (speed * NoteManager.instance.speedMultiplier * elapsedTime);
+            this.GetComponent<RectTransform>().anchoredPosition = new Vector2(this.GetComponent<RectTransform>().anchoredPosition.x, y);
         }
 
         private void Miss()
         {
             Pool.Release(this.gameObject);
             Debug.Log("Miss");
-            //Remove From notesInLan
+            //Remove From notesInLane
         }
     }
 }

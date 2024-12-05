@@ -86,7 +86,7 @@ public class AudioManager : MonoBehaviour
         if (PlaybackState(musicInstance) == FMOD.Studio.PLAYBACK_STATE.PLAYING && currentTime >= ticktime * currentTick)
         {
             currentTick += 1;
-            sfxInstance.start();
+            //sfxInstance.start();
         }
     }
 
@@ -177,7 +177,7 @@ public class AudioManager : MonoBehaviour
             FMOD.RESULT result = musicInstance.setTimelinePosition(position);
             if (result == FMOD.RESULT.OK)
             {
-                UnityEngine.Debug.Log($"Moved to {position} ms on the timeline.");
+                //UnityEngine.Debug.Log($"Moved to {position} ms on the timeline.");
             }
             else
             {

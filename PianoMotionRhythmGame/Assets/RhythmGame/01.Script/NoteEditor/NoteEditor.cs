@@ -1,91 +1,103 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NoteEditor : MonoBehaviour
+namespace RhythmGame
 {
-    [SerializeField] private TextMeshProUGUI txt_PlayPause;
-    [SerializeField] private TextMeshProUGUI txt_Stop;
-
-    [SerializeField] private Slider timeSlider;
-
-    private bool isPlaying;
-    private bool isStarted;
-    private float currentTime = 0;
-    private int musicLength = 0;
-
-
-    void Start()
+    public class NoteEditor : MonoBehaviour
     {
-        musicLength = AudioManager._instance.GetEventLength();
-        InitializeSlider();
-    }
+        [SerializeField] private TextMeshProUGUI txt_PlayPause;
+        [SerializeField] private TextMeshProUGUI txt_Stop;
 
-    void Update()
-    {
-        //UpdateCurrentTime();
-        UpdateTimeSlider();
-    }
+        [SerializeField] private Slider timeSlider;
 
-    private void InitializeSlider()
-    {
-        timeSlider.minValue = 0;
-        timeSlider.maxValue = musicLength;
-        timeSlider.onValueChanged.AddListener(OnSliderValueChanged);
-    }
+        private bool isPlaying;
+        private bool isStarted;
+        private int currentTime = 0;
+        private int musicLength = 0;
 
-    private void UpdateCurrentTime()
-    {
-        currentTime = AudioManager._instance.GetTime();
-    }
 
-    private void UpdateTimeSlider()
-    {
-        if(!timeSlider.IsInteractable())
+        void Start()
         {
-            timeSlider.value = AudioManager._instance.GetTime();
+            musicLength = AudioManager._instance.GetEventLength();
+            InitializeSlider();
         }
-    }
 
-    private void OnSliderValueChanged(float newValue)
-    {
-        AudioManager._instance.SetTimelinePosition((int)newValue);
-    }
-
-    public void PlayPauseMusic()
-    {
-        if(isPlaying)
+        void Update()
         {
-            isPlaying = false;
-            AudioManager._instance.PauseMusic();
-            txt_PlayPause.text = "Play";
+            UpdateCurrentTime();
+            UpdateTimeSlider();
         }
-        else
+
+        private void InitializeSlider()
         {
-            isPlaying = true;
-            if(isStarted == true)
+            timeSlider.minValue = 0;
+            timeSlider.maxValue = musicLength;
+            timeSlider.onValueChanged.AddListener(OnSliderValueChanged);
+        }
+
+        private void UpdateCurrentTime()
+        {
+            currentTime = AudioManager._instance.GetTime();
+        }
+
+        private void UpdateTimeSlider()
+        {
+            if (!timeSlider.IsInteractable())
             {
-                AudioManager._instance.Resume();
-                txt_PlayPause.text = "Pause";
+                timeSlider.value = AudioManager._instance.GetTime();
+            }
+        }
+
+        private void OnSliderValueChanged(float newValue)
+        {
+            AudioManager._instance.SetTimelinePosition((int)newValue);
+        }
+
+        public int GetCurrentTime() => currentTime;
+
+        public void PlayPauseMusic()
+        {
+            if (isPlaying)
+            {
+                isPlaying = false;
+                AudioManager._instance.PauseMusic();
+                txt_PlayPause.text = "Play";
             }
             else
             {
-                AudioManager._instance.StartMusic();
-                txt_PlayPause.text = "Pause";
-                isStarted = true;
+                isPlaying = true;
+                if (isStarted == true)
+                {
+                    AudioManager._instance.Resume();
+                    txt_PlayPause.text = "Pause";
+                }
+                else
+                {
+                    AudioManager._instance.StartMusic();
+                    txt_PlayPause.text = "Pause";
+                    isStarted = true;
+                }
             }
         }
-    }
 
-    public void StopMusic()
-    {
-        if(isPlaying)
+        public void StopMusic()
         {
             AudioManager._instance.StopMusic();
             txt_PlayPause.text = "Play";
             isStarted = false;
+        }
+
+        public void Rewind()
+        {
+            AudioManager._instance.SetTimelinePosition(currentTime - 100);
+        }
+        public void Skip()
+        {
+            AudioManager._instance.SetTimelinePosition(currentTime + 100);
         }
     }
 }

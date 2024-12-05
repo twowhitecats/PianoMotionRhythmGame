@@ -1,3 +1,4 @@
+using OVR.OpenVR;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
@@ -7,14 +8,17 @@ namespace RhythmGame
 {
     public class NoteManager : MonoBehaviour
     {
-        public bool gameStarted;
-        [SerializeField] private bool testing;
+        public Mode currentMode;
+        public bool gameStart;
 
         [SerializeField] private GameObject obj_note;
 
         [SerializeField] private Transform pool;
+        private List<GameObject> activeInPool = new List<GameObject>();
+
         [SerializeField] private JSONParser parser;
         [SerializeField] private LaneManager laneManager;
+        [SerializeField] private NoteEditor noteEditor;
 
         public IObjectPool<GameObject> NotePool { get; private set; }
         [SerializeField] private int defaultPoolSize;
@@ -47,45 +51,59 @@ namespace RhythmGame
 
         private void Update()
         {
-            //currentTime = Time.time;
-            currentTime = AudioManager._instance.GetTime()/1000f;
-            if(testing)
+            if(currentMode == Mode.Test)
             {
-                if(Input.GetKeyDown(KeyCode.Alpha1))
-                {
-                    laneManager.SpawnNote(0, currentTime + 2f);
-                }
-                if(Input.GetKeyDown(KeyCode.Alpha2))
-                {
-                    laneManager.SpawnNote(1, currentTime + 2f);
-                }
-                if(Input.GetKeyDown(KeyCode.Alpha3))
-                {
-                    laneManager.SpawnNote(2, currentTime + 2f);
-                }
-                if(Input.GetKeyDown(KeyCode.Alpha4))
-                {
-                    laneManager.SpawnNote(3, currentTime + 2f);
-                }
-                if(Input.GetKeyDown(KeyCode.Alpha5))
-                {
-                    laneManager.SpawnNote(4, currentTime + 2f);
-                }
-                if(Input.GetKeyDown(KeyCode.Alpha6))
-                {
-                    laneManager.SpawnNote(5, currentTime + 2f);
-                }
+                SpawnNoteByNumberKey();
             }
-            if(gameStarted)
+            else if(currentMode == Mode.Editing)
             {
-                if(parser.chart.Count != 0 && index < parser.chart.Count && currentTime >= parser.chart[index].targetTime-2f)
+                currentTime = noteEditor.GetCurrentTime()/1000f;
+                SpawnNoteByJSON();
+            }
+            else if(currentMode == Mode.Game && gameStart)
+            {
+                currentTime = AudioManager._instance.GetTime()/1000f;
+                SpawnNoteByJSON();
+            }
+        }
+
+        private void SpawnNoteByNumberKey()
+        {
+            if(Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                laneManager.SpawnNote(0, currentTime + 2f);
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                laneManager.SpawnNote(1, currentTime + 2f);
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                laneManager.SpawnNote(2, currentTime + 2f);
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                laneManager.SpawnNote(3, currentTime + 2f);
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                laneManager.SpawnNote(4, currentTime + 2f);
+            }
+            if(Input.GetKeyDown(KeyCode.Alpha6))
+            {
+                laneManager.SpawnNote(5, currentTime + 2f);
+            }
+        }
+
+        private void SpawnNoteByJSON()
+        {
+            if(parser.chart.Count != 0 && index < parser.chart.Count && currentTime >= parser.chart[index].targetTime-2f)
+            {
+                for (int i = 0; i < parser.chart[index].notes.Count; i++)
                 {
-                    for (int i = 0; i < parser.chart[index].notes.Count; i++)
-                    {
-                        laneManager.SpawnNote(parser.chart[index].notes[i], parser.chart[index].targetTime);
-                    }
-                    index++;
+                    laneManager.SpawnNote(parser.chart[index].notes[i], parser.chart[index].targetTime);
                 }
+                index++;
             }
         }
 
@@ -112,15 +130,25 @@ namespace RhythmGame
         private void OnTakeFromPool(GameObject item)
         {
             item.SetActive(true);
+            activeInPool.Add(item);
         }
         private void OnReturnedToPool(GameObject item)
         {
             item.SetActive(false);
+            activeInPool.Remove(item);
         }
 
         private void OnDestroyPoolObject(GameObject item)
         {
             Destroy(item);
+            activeInPool.Remove(item);
         }
     }
+}
+
+public enum Mode
+{
+    Game = 0,
+    Editing = 1,
+    Test = 2
 }
