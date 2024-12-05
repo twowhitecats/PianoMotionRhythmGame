@@ -70,5 +70,9 @@ namespace RhythmGame
             Debug.Log("Miss");
             //Remove From notesInLane
         }
+        public void Release()
+        {
+            Pool.Release(this.gameObject);
+        }
     }
 }

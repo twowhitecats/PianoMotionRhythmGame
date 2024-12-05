@@ -18,7 +18,7 @@ namespace RhythmGame
 
         [SerializeField] private JSONParser parser;
         [SerializeField] private LaneManager laneManager;
-        [SerializeField] private NoteEditor noteEditor;
+        [SerializeField] private MusicController MusicController;
 
         public IObjectPool<GameObject> NotePool { get; private set; }
         [SerializeField] private int defaultPoolSize;
@@ -57,8 +57,7 @@ namespace RhythmGame
             }
             else if(currentMode == Mode.Editing)
             {
-                currentTime = noteEditor.GetCurrentTime()/1000f;
-                SpawnNoteByJSON();
+                currentTime = MusicController.GetCurrentTime()/1000f;
             }
             else if(currentMode == Mode.Game && gameStart)
             {
@@ -143,6 +142,8 @@ namespace RhythmGame
             Destroy(item);
             activeInPool.Remove(item);
         }
+
+        public void ResetIndex() => index = 0;
     }
 }
 

@@ -7,80 +7,75 @@ using UnityEngine.UI;
 
 namespace RhythmGame
 {
-    public class NoteEditor : MonoBehaviour
+    public class MusicController : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI txt_PlayPause;
         [SerializeField] private TextMeshProUGUI txt_Stop;
-
-        [SerializeField] private Slider timeSlider;
+        [SerializeField] private TextMeshProUGUI txt_time;
 
         private bool isPlaying;
         private bool isStarted;
         private int currentTime = 0;
-        private int musicLength = 0;
 
-
-        void Start()
-        {
-            musicLength = AudioManager._instance.GetEventLength();
-            InitializeSlider();
-        }
-
-        void Update()
+        private void Update()
         {
             UpdateCurrentTime();
-            UpdateTimeSlider();
+            UpdateTimeText();
         }
 
-        private void InitializeSlider()
+        private void UpdateTimeText()
         {
-            timeSlider.minValue = 0;
-            timeSlider.maxValue = musicLength;
-            timeSlider.onValueChanged.AddListener(OnSliderValueChanged);
+            txt_time.text = msTimeString(currentTime) + " / " + TimeString(AudioManager._instance.GetEventLength());
         }
+        private string msTimeString(int ms)
+        {
+            int totalSeconds = ms / 1000;
 
+            int minutes = totalSeconds / 60;
+            int seconds = totalSeconds % 60;
+
+            string remainingMilliseconds = (ms % 1000).ToString("D3").Substring(0, 2);
+
+            return string.Format("{0:00}:{1:00}:{2}", minutes, seconds, remainingMilliseconds);
+        }
+        private string TimeString(int ms)
+        {
+            int totalSeconds = ms / 1000;
+
+            int minutes = totalSeconds / 60;
+            int seconds = totalSeconds % 60;
+
+            return string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
         private void UpdateCurrentTime()
         {
             currentTime = AudioManager._instance.GetTime();
-        }
-
-        private void UpdateTimeSlider()
-        {
-            if (!timeSlider.IsInteractable())
-            {
-                timeSlider.value = AudioManager._instance.GetTime();
-            }
-        }
-
-        private void OnSliderValueChanged(float newValue)
-        {
-            AudioManager._instance.SetTimelinePosition((int)newValue);
         }
 
         public int GetCurrentTime() => currentTime;
 
         public void PlayPauseMusic()
         {
-            if (isPlaying)
+            if (isPlaying) //Pause
             {
                 isPlaying = false;
                 AudioManager._instance.PauseMusic();
                 txt_PlayPause.text = "Play";
             }
-            else
+            else //Start or Resume
             {
-                isPlaying = true;
-                if (isStarted == true)
+                if (isStarted == true) //Resume
                 {
                     AudioManager._instance.Resume();
                     txt_PlayPause.text = "Pause";
                 }
-                else
+                else //Start
                 {
                     AudioManager._instance.StartMusic();
                     txt_PlayPause.text = "Pause";
                     isStarted = true;
                 }
+                isPlaying = true;
             }
         }
 
@@ -89,6 +84,8 @@ namespace RhythmGame
             AudioManager._instance.StopMusic();
             txt_PlayPause.text = "Play";
             isStarted = false;
+            isPlaying = false;
+            NoteManager.instance.ResetIndex();
         }
 
         public void Rewind()

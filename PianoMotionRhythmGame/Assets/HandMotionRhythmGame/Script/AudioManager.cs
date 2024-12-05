@@ -138,7 +138,7 @@ public class AudioManager : MonoBehaviour
     {
         if (PlaybackState(musicInstance) != FMOD.Studio.PLAYBACK_STATE.STOPPED)
         {
-            musicInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            musicInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             UnityEngine.Debug.Log("Music Stopped!");
         }
     }
