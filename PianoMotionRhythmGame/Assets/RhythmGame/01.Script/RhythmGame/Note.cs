@@ -45,6 +45,7 @@ namespace RhythmGame
             }
             else if(NoteManager.instance.currentMode == Mode.Editing)
             {
+                SetSpawnTime();
                 Move();
 
                 if(CheckEnd())

@@ -49,7 +49,7 @@ namespace RhythmGame
                 Destroy(this.gameObject);
             }
 
-            InitNotePool();
+            InitPool();
         }
 
         private void Start()
@@ -146,19 +146,19 @@ namespace RhythmGame
             }
         }
 
-        private void InitNotePool()
+        private void InitPool()
         {
-            NotePool = new ObjectPool<GameObject>(CreatePooledNote, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject,
+            NotePool = new ObjectPool<GameObject>(CreatePooledItem, OnTakeFromPool, OnReturnedToPool, OnDestroyPoolObject,
                 true, defaultPoolSize, maxPoolSize);
 
             for(int i = 0; i < defaultPoolSize; i++)
             {
-                Note note = CreatePooledNote().GetComponent<Note>();
+                Note note = CreatePooledItem().GetComponent<Note>();
                 note.Pool.Release(note.gameObject);
             }
         }
 
-        private GameObject CreatePooledNote()
+        private GameObject CreatePooledItem()
         {
             GameObject item = Instantiate(obj_note);
             item.GetComponent<Note>().Pool = this.NotePool;
