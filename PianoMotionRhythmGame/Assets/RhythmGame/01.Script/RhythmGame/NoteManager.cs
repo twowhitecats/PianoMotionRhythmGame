@@ -22,6 +22,7 @@ namespace RhythmGame
         [SerializeField] private JSONParser parser;
         [SerializeField] private LaneManager laneManager;
         [SerializeField] private MusicController MusicController;
+        [SerializeField] private NoteEditor noteEditor;
 
         [Header("ObjectPooling")]
         [SerializeField] private int defaultPoolSize;
@@ -116,7 +117,7 @@ namespace RhythmGame
         }
         private void ManageNoteByTime()
         {
-            foreach(NoteTiming noteData in parser.chart)
+            foreach(NoteTiming noteData in noteEditor.editingNotes)
             {
                 if(Mathf.Abs(noteData.targetTime - currentTime) <= spawnOffset)
                 {
@@ -182,6 +183,17 @@ namespace RhythmGame
             Destroy(item);
             activeInPool.Remove(item);
         }
+
+        public void AddNote(NoteInfo info, float targetTime)
+        {
+            NoteTiming timing = new NoteTiming();
+            timing.notes = new List<NoteInfo>();
+            timing.notes.Add(info);
+            timing.targetTime = targetTime;
+
+            noteEditor.editingNotes.Add(timing);
+        }
+
         public void ResetIndex() => index = 0;
         public int GetIndex() => index;
     }
