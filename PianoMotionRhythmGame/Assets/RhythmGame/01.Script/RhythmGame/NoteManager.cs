@@ -47,8 +47,8 @@ namespace RhythmGame
 
         private void Update()
         {
-            //currentTime = Time.time;
-            currentTime = AudioManager._instance.GetTime()/1000f;
+            currentTime = Time.time;
+            //currentTime = AudioManager._instance.GetTime()/1000f;
             if(testing)
             {
                 if(Input.GetKeyDown(KeyCode.Alpha1))
