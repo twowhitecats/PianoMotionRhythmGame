@@ -18,13 +18,27 @@ public class ControllerManager : MonoBehaviour
     {
         
     }
-    public void MissVibration(OVRInput.Controller controller)
+    public void MissVibration(bool isrhand)
     {
-        VibrateForTime(0.5f, 0.2f, 1.0f, controller);
+        if (isrhand)
+        {
+            VibrateForTime(0.5f, 0.2f, 1.0f, OVRInput.Controller.RTouch);
+        }
+        else
+        {
+            VibrateForTime(0.5f, 0.2f, 1.0f, OVRInput.Controller.LTouch);
+        }
     }
-    public void GreatVibration(OVRInput.Controller controller)
+    public void GreatVibration(bool isrhand)
     {
-        VibrateForTime(0.2f, 1.0f, 0.3f, controller);
+        if (isrhand)
+        {
+            VibrateForTime(0.2f, 1.0f, 0.3f, OVRInput.Controller.LTouch);
+        }
+        else
+        {
+            VibrateForTime(0.2f, 1.0f, 0.3f, OVRInput.Controller.LTouch);
+        }
     }
 
     private void VibrateForTime(float duration, float frequency, float amplitude, OVRInput.Controller controller)
@@ -51,13 +65,11 @@ public class ControllerManager : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger)) //L
         {
             keyboardManager.KeyPress(false);
-            VibrateForTime(0.5f, 0.5f, 1.0f, OVRInput.Controller.LTouch);
         }
 
         if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger)) //R
         {
             keyboardManager.KeyPress(true);
-            VibrateForTime(0.5f, 0.5f, 1.0f, OVRInput.Controller.RTouch);
         }
 
         if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))
