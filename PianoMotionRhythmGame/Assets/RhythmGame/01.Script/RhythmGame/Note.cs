@@ -17,6 +17,8 @@ namespace RhythmGame
 
         private float elapsedTime;
 
+        private float y;
+
         public void SetSpawnTime()
         {
             float distance = 920;
@@ -45,6 +47,11 @@ namespace RhythmGame
             }
             else if(NoteManager.instance.currentMode == Mode.Editing)
             {
+                if(elapsedTime < 0)
+                {
+                    return;
+                }
+
                 SetSpawnTime();
                 Move();
 
@@ -54,14 +61,14 @@ namespace RhythmGame
                 }
             }
         }
-        protected bool CheckEnd()
+        private bool CheckEnd()
         {
             return this.GetComponent<RectTransform>().anchoredPosition.y <= -500;
         }
 
-        protected void Move()
+        private void Move()
         {
-            float y = 480 - (speed * NoteManager.instance.speedMultiplier * elapsedTime);
+            y = 480 - (speed * NoteManager.instance.speedMultiplier * elapsedTime);
             this.GetComponent<RectTransform>().anchoredPosition = new Vector2(this.GetComponent<RectTransform>().anchoredPosition.x, y);
         }
 
