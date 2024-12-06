@@ -22,6 +22,7 @@ namespace RhythmGame
 
         void Update()
         {
+            //DespawnBaseline();
             if (NoteManager.instance.currentTime != 0 && NoteManager.instance.currentTime >= index - 2f)
             {
                 SpawnBaseline();
@@ -35,6 +36,19 @@ namespace RhythmGame
             go.GetComponent<RectTransform>().anchoredPosition = new Vector2(this.GetComponent<RectTransform>().anchoredPosition.x, 480);
             go.GetComponent<Baseline>().targetTime = index;
             go.GetComponent<Baseline>().SetSpawnTime();
+        }
+        private void DespawnBaseline()
+        {
+            for (int i = activeInPool.Count - 1; i >= 0; i--)
+            {
+                GameObject baseline = activeInPool[i];
+                float baselineTime = baseline.GetComponent<Baseline>().targetTime;
+
+                if (NoteManager.instance.currentTime <= baselineTime - 2)
+                {
+                    LinePool.Release(baseline);
+                }
+            }
         }
         private void InitPool()
         {
@@ -71,6 +85,15 @@ namespace RhythmGame
         {
             Destroy(item);
             activeInPool.Remove(item);
+        }
+
+        public void ResetLines()
+        {
+            for(int i = 0; i < activeInPool.Count; i++)
+            {
+                LinePool.Release(activeInPool[i]);
+            }
+            index = 0;
         }
     }
 }

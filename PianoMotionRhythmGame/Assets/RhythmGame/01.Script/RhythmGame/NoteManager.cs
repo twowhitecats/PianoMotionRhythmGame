@@ -183,6 +183,7 @@ namespace RhythmGame
             activeInPool.Remove(item);
         }
         public void ResetIndex() => index = 0;
+        public int GetIndex() => index;
     }
 }
 

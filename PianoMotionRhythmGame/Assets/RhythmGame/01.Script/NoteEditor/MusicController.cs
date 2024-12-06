@@ -15,6 +15,8 @@ namespace RhythmGame
         [SerializeField] private TextMeshProUGUI txt_time;
         [SerializeField] private TMP_InputField timeInputField;
 
+        [SerializeField] private BaselineManager baselineManager;
+
         private bool isPlaying;
         private bool isStarted;
         private int currentTime = 0;
@@ -35,7 +37,7 @@ namespace RhythmGame
         {
             if(isPlaying)
             {
-                timeInputField.text = msTimeString(AudioManager._instance.GetTime());
+                timeInputField.text = msTimeString(currentTime);
             }
         }
         private string msTimeString(int ms)
@@ -138,9 +140,11 @@ namespace RhythmGame
         {
             AudioManager._instance.StopMusic();
             txt_PlayPause.text = "Play";
+            timeInputField.text = msTimeString(currentTime);
             isStarted = false;
             isPlaying = false;
             NoteManager.instance.ResetIndex();
+            baselineManager.ResetLines();
         }
 
         public void Rewind()
