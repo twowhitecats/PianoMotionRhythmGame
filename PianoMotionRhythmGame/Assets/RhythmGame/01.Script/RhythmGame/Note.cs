@@ -18,8 +18,11 @@ namespace RhythmGame
 
         private float elapsedTime;
 
+        private int laneNum;
+
         private float y;
         private ControllerManager controllerManager;
+
         public void Start()
         {
             controllerManager=GameObject.Find("ControllerManager").GetComponent<ControllerManager>();
@@ -92,6 +95,13 @@ namespace RhythmGame
             controllerManager.MissVibration(false);
             //Remove From notesInLane
         }
+
+        public void SetLaneNum(int num)
+        {
+            this.laneNum = num;
+        }
+        public int GetLaneNum() => laneNum;
+
         public void OnEdit()
         {
             NoteEditor noteEditor = GameObject.Find("NoteEditor").GetComponent<NoteEditor>();

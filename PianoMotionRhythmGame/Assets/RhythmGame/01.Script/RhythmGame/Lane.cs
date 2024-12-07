@@ -47,6 +47,7 @@ namespace RhythmGame
             go.GetComponent<Note>().targetTime = targetTime;
             go.GetComponent<Note>().keyToPress = code;
             go.GetComponent<Note>().SetSpawnTime();
+            go.GetComponent<Note>().SetLaneNum(laneNum);
 
             notesInLane.Add(go.GetComponent<Note>());
         }

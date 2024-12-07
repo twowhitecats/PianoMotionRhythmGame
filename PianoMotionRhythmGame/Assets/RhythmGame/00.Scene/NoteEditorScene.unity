@@ -399,10 +399,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 842021694}
+  - {fileID: 1305625728}
   - {fileID: 188503424}
   - {fileID: 42909984}
   - {fileID: 1780569424}
-  - {fileID: 1305625728}
   m_Father: {fileID: 1133086672}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -422,10 +422,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb28cdd27adf824389151b6fe11889c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  editingNotes: []
+  editingNotes:
+  - targetTime: 3
+    notes:
+    - laneNum: 0
+      button: 0
   parser: {fileID: 1900099544}
   input_filename: {fileID: 188503425}
-  input_tagetTime: {fileID: 842021695}
+  input_targetTime: {fileID: 842021695}
 --- !u!1 &81187859
 GameObject:
   m_ObjectHideFlags: 0
@@ -3890,7 +3894,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 597389781}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 79489120}
+        m_TargetAssemblyTypeName: RhythmGame.NoteEditor, Assembly-CSharp
+        m_MethodName: SetNoteLane5
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &597389781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7550,6 +7566,12 @@ PrefabInstance:
       value: ScoreUI
       objectReference: {fileID: 0}
     - target: {fileID: 3278462940355820901, guid: 2dd7a0b6bc87d974a9f555ca18363ad0, type: 3}
+      propertyPath: m_text
+      value: '
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3278462940355820901, guid: 2dd7a0b6bc87d974a9f555ca18363ad0, type: 3}
       propertyPath: m_fontSize
       value: 60
       objectReference: {fileID: 0}
@@ -7572,6 +7594,12 @@ PrefabInstance:
     - target: {fileID: 3278462940355820901, guid: 2dd7a0b6bc87d974a9f555ca18363ad0, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597248441713240898, guid: 2dd7a0b6bc87d974a9f555ca18363ad0, type: 3}
+      propertyPath: m_text
+      value: '
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 4597248441713240898, guid: 2dd7a0b6bc87d974a9f555ca18363ad0, type: 3}
       propertyPath: m_fontSize
@@ -7608,6 +7636,12 @@ PrefabInstance:
     - target: {fileID: 8473685402649990137, guid: 2dd7a0b6bc87d974a9f555ca18363ad0, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 319
+      objectReference: {fileID: 0}
+    - target: {fileID: 8628798216791186793, guid: 2dd7a0b6bc87d974a9f555ca18363ad0, type: 3}
+      propertyPath: m_text
+      value: '
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 8739695496015587077, guid: 2dd7a0b6bc87d974a9f555ca18363ad0, type: 3}
       propertyPath: m_Color.a
@@ -7878,7 +7912,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 956999576}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 79489120}
+        m_TargetAssemblyTypeName: RhythmGame.NoteEditor, Assembly-CSharp
+        m_MethodName: SetNoteLane4
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &956999576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11558,7 +11604,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1305625730}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 79489120}
+        m_TargetAssemblyTypeName: RhythmGame.NoteEditor, Assembly-CSharp
+        m_MethodName: SpawnEditedNote
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1305625730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14363,7 +14421,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1572482056}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 79489120}
+        m_TargetAssemblyTypeName: RhythmGame.NoteEditor, Assembly-CSharp
+        m_MethodName: SetNoteLane0
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1572482056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14736,7 +14806,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1619677117}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 79489120}
+        m_TargetAssemblyTypeName: RhythmGame.NoteEditor, Assembly-CSharp
+        m_MethodName: SetNoteLane1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1619677117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15691,7 +15773,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1685040297}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 79489120}
+        m_TargetAssemblyTypeName: RhythmGame.NoteEditor, Assembly-CSharp
+        m_MethodName: SetNoteLane3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1685040297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18075,7 +18169,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2001596863}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 79489120}
+        m_TargetAssemblyTypeName: RhythmGame.NoteEditor, Assembly-CSharp
+        m_MethodName: SetNoteLane2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2001596863
 MonoBehaviour:
   m_ObjectHideFlags: 0
