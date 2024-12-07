@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace RhythmGame
 {
@@ -17,6 +18,9 @@ namespace RhythmGame
         [SerializeField] private BoxCollider2D greatRange;
         [SerializeField] private BoxCollider2D goodRange;
         [SerializeField] private BoxCollider2D badRange;
+
+        [SerializeField] private Color idleColor;
+        [SerializeField] private Color hitColor;
 
         private void Awake()
         {
@@ -90,6 +94,13 @@ namespace RhythmGame
                     notesInLane.RemoveAt(0);
                 }
             }
+            hitPoint.GetComponent<Image>().color = Color.red;
+            Invoke("ReturnColor", 0.1f);
+        }
+
+        private void ReturnColor()
+        {
+            hitPoint.GetComponent<Image>().color = Color.white;
         }
 
         private bool InRange(float distance, BoxCollider2D range)
