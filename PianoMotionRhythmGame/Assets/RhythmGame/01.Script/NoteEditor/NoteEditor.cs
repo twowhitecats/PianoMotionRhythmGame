@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 namespace RhythmGame
@@ -13,7 +12,17 @@ namespace RhythmGame
         [SerializeField] private JSONParser parser;
         [SerializeField] private TMP_InputField input_filename;
 
+        [SerializeField] private TMP_InputField input_tagetTime;
+
+        private Note noteToEdit;
+
         private string filename;
+
+        public void SetNoteToEdit(Note note)
+        {
+            this.noteToEdit = note;
+            input_tagetTime.text = note.targetTime.ToString();
+        }
 
         public void SaveToJson()
         {

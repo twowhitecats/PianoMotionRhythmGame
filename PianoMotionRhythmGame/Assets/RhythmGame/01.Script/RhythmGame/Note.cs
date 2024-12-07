@@ -92,5 +92,10 @@ namespace RhythmGame
             controllerManager.MissVibration(false);
             //Remove From notesInLane
         }
+        public void OnEdit()
+        {
+            NoteEditor noteEditor = GameObject.Find("NoteEditor").GetComponent<NoteEditor>();
+            noteEditor.SetNoteToEdit(this);
+        }
     }
 }
