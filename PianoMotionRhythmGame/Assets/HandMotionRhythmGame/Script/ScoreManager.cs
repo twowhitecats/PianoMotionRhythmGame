@@ -12,13 +12,16 @@ public class ScoreManager : MonoBehaviour
     [Header("Instance")]
     public static ScoreManager _instance;
 
-    public ScoreManager Instance()
+    private void Awake()
     {
         if (_instance == null)
         {
             _instance = this;
         }
-        return _instance;
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public enum Judgement
@@ -102,11 +105,9 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
-            ComboText.text = string.Format($"Combo {Combo}");
+            ComboText.text = string.Format($"Combo {Combo}") + "\n" + recentJudge.ToString();
         }
-        Judgetext.text = recentJudge.ToString();
         scoreText.text = ((int)totalScore).ToString();
-
     }
 
 

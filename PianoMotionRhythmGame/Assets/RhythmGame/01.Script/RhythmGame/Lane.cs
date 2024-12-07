@@ -19,9 +19,6 @@ namespace RhythmGame
         [SerializeField] private BoxCollider2D goodRange;
         [SerializeField] private BoxCollider2D badRange;
 
-        [SerializeField] private Color idleColor;
-        [SerializeField] private Color hitColor;
-
         private void Awake()
         {
             Setup();
@@ -73,18 +70,22 @@ namespace RhythmGame
                     if(InRange(distance, perfectRange))
                     {
                         Debug.Log("Perfect");
+                        ScoreManager._instance.NoteHit(ScoreManager.Judgement.Perfect);
                     }
                     else if(InRange(distance, greatRange))
                     {
                         Debug.Log("Great");
+                        ScoreManager._instance.NoteHit(ScoreManager.Judgement.Great);
                     }
                     else if(InRange(distance, goodRange))
                     {
                         Debug.Log("Good");
+                        ScoreManager._instance.NoteHit(ScoreManager.Judgement.Good);
                     }
                     else if(InRange(distance, badRange))
                     {
                         Debug.Log("Bad");
+                        ScoreManager._instance.NoteHit(ScoreManager.Judgement.Bad);
                     }
                     else
                     {

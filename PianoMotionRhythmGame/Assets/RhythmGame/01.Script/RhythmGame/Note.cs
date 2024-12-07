@@ -83,6 +83,7 @@ namespace RhythmGame
             Pool.Release(this.gameObject);
             Debug.Log("Miss");
             //Remove From notesInLane
+            ScoreManager._instance.NoteMiss();
         }
         public void Release()
         {
