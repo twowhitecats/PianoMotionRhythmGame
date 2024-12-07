@@ -1,6 +1,7 @@
 using Meta.XR.MultiplayerBlocks.Fusion.Editor;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -14,6 +15,12 @@ namespace RhythmGame
 
         public float speed;
         public float spawnTime;
+
+        private ControllerManager controllerManager;
+        public void Start()
+        {
+            controllerManager=GameObject.Find("ControllerManager").GetComponent<ControllerManager>();
+        }
 
         public void SetSpawnTime()
         {
@@ -43,6 +50,8 @@ namespace RhythmGame
         {
             Pool.Release(this.gameObject);
             Debug.Log("Miss");
+            controllerManager.MissVibration(true);
+            controllerManager.MissVibration(false);
             //Remove From notesInLan
         }
     }
