@@ -41,7 +41,7 @@ public class AudioManager : MonoBehaviour
 
     int currentTime = 0; //¹Ð¸®ÃÊ
     int currentTick = 0;
-    int startDelay = 0;
+    int startDelay = 5500;
     int ticktime = 0;
 
 
@@ -69,12 +69,18 @@ public class AudioManager : MonoBehaviour
 
         //StartMusic();
     }
-
+    private void Start()
+    {
+        StartMusic();
+        
+    }
 
 
     // Update is called once per frame
     void Update()
     {
+        if (PlaybackState(musicInstance) == FMOD.Studio.PLAYBACK_STATE.PLAYING) currentTime = GetTime() - startDelay;
+
 
         if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger)) 
         {
@@ -87,13 +93,13 @@ public class AudioManager : MonoBehaviour
         if (PlaybackState(musicInstance) == FMOD.Studio.PLAYBACK_STATE.PLAYING && currentTime >= ticktime * currentTick)
         {
             currentTick += 1;
-            //sfxInstance.start();
+            sfxInstance.start();
         }
+
     }
 
     private void FixedUpdate()
     {
-        if (PlaybackState(musicInstance) == FMOD.Studio.PLAYBACK_STATE.PLAYING) currentTime = GetTime();
     }
     void OnDestroy()
     {
