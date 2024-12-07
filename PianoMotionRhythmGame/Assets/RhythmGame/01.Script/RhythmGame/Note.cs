@@ -16,6 +16,9 @@ namespace RhythmGame
         public float speed;
         public float spawnTime;
 
+        private float elapsedTime;
+
+        private float y;
         private ControllerManager controllerManager;
         public void Start()
         {
@@ -32,27 +35,61 @@ namespace RhythmGame
 
         private void Update()
         {
-            float elapsedTime = NoteManager.instance.currentTime - spawnTime;
-            if(elapsedTime < 0)
+            elapsedTime = NoteManager.instance.currentTime - spawnTime;
+            if(NoteManager.instance.currentMode == Mode.Game || NoteManager.instance.currentMode == Mode.Test)
             {
-                return;
-            }
-            float y = 480 - (speed * NoteManager.instance.speedMultiplier * elapsedTime);
-            this.GetComponent<RectTransform>().anchoredPosition = new Vector2(this.GetComponent<RectTransform>().anchoredPosition.x, y);
+                if(elapsedTime < 0)
+                {
+                    return;
+                }
 
-            if(this.GetComponent<RectTransform>().anchoredPosition.y <= -540)
-            {
-                Miss();
+                Move();
+
+                if(CheckEnd())
+                {
+                    speed = 0;
+                    Miss();
+                }
             }
+            else if(NoteManager.instance.currentMode == Mode.Editing)
+            {
+                if(elapsedTime < 0)
+                {
+                    return;
+                }
+
+                SetSpawnTime();
+                Move();
+
+                if(CheckEnd())
+                {
+                    Pool.Release(this.gameObject);
+                }
+            }
+        }
+        private bool CheckEnd()
+        {
+            return this.GetComponent<RectTransform>().anchoredPosition.y <= -500;
+        }
+
+        private void Move()
+        {
+            y = 480 - (speed * NoteManager.instance.speedMultiplier * elapsedTime);
+            this.GetComponent<RectTransform>().anchoredPosition = new Vector2(this.GetComponent<RectTransform>().anchoredPosition.x, y);
         }
 
         private void Miss()
         {
             Pool.Release(this.gameObject);
             Debug.Log("Miss");
+            //Remove From notesInLane
+        }
+        public void Release()
+        {
+            Pool.Release(this.gameObject);
             controllerManager.MissVibration(true);
             controllerManager.MissVibration(false);
-            //Remove From notesInLan
+            //Remove From notesInLane
         }
     }
 }

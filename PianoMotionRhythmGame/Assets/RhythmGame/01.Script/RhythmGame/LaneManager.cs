@@ -21,27 +21,27 @@ namespace RhythmGame
 
         private void Update()
         {
-            if(Input.GetKey(KeyCode.S))
+            if(Input.GetKeyDown(KeyCode.S))
             {
                 Hit(0);
             }
-            if(Input.GetKey(KeyCode.D))
+            if(Input.GetKeyDown(KeyCode.D))
             {
                 Hit(1);
             }
-            if(Input.GetKey(KeyCode.F))
+            if(Input.GetKeyDown(KeyCode.F))
             {
                 Hit(2);
             }
-            if(Input.GetKey(KeyCode.J))
+            if(Input.GetKeyDown(KeyCode.J))
             {
                 Hit(3);
             }
-            if(Input.GetKey(KeyCode.K))
+            if(Input.GetKeyDown(KeyCode.K))
             {
                 Hit(4);
             }
-            if(Input.GetKey(KeyCode.L))
+            if(Input.GetKeyDown(KeyCode.L))
             {
                 Hit(5);
             }

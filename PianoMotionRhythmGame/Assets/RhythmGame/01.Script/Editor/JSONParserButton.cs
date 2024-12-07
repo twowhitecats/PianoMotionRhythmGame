@@ -13,7 +13,7 @@ namespace RhythmGame
             JSONParser parser = (JSONParser)target;
             if (GUILayout.Button("Generate JSON"))
             {
-                parser.GenerateJSON();
+                parser.GenerateJSON("Test.json",parser.chart);
             }
             if (GUILayout.Button("Load JSON"))
             {

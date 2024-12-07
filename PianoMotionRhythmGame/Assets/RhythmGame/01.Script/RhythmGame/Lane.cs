@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace RhythmGame
 {
@@ -11,10 +12,15 @@ namespace RhythmGame
 
         private List<Note> notesInLane = new List<Note>();
 
+        [SerializeField] private int laneNum;
+
         [SerializeField] private BoxCollider2D perfectRange;
         [SerializeField] private BoxCollider2D greatRange;
         [SerializeField] private BoxCollider2D goodRange;
         [SerializeField] private BoxCollider2D badRange;
+
+        [SerializeField] private Color idleColor;
+        [SerializeField] private Color hitColor;
 
         private void Awake()
         {
@@ -39,6 +45,7 @@ namespace RhythmGame
         public void SpawnNote(float targetTime, KeyCode code)
         {
             var go = NoteManager.instance.NotePool.Get();
+
             go.transform.position = this.spawnPoint.position;
             go.GetComponent<Note>().targetTime = targetTime;
             go.GetComponent<Note>().keyToPress = code;
@@ -49,34 +56,51 @@ namespace RhythmGame
 
         public void Hit()
         {
-            if(notesInLane.Count != 0)
+            if(NoteManager.instance.currentMode == Mode.Editing)
             {
-                //Judge Timings
-                float distance = notesInLane[0].GetComponent<RectTransform>().anchoredPosition.y - hitPoint.GetComponent<RectTransform>().anchoredPosition.y;
-                Debug.Log(distance);
-                if(InRange(distance, perfectRange))
-                {
-                    Debug.Log("Perfect");
-                }
-                else if(InRange(distance, greatRange))
-                {
-                    Debug.Log("Great");
-                }
-                else if(InRange(distance, goodRange))
-                {
-                    Debug.Log("Good");
-                }
-                else if(InRange(distance, badRange))
-                {
-                    Debug.Log("Bad");
-                }
-                else
-                {
-                    return;
-                }
-                notesInLane[0].Pool.Release(notesInLane[0].gameObject);
-                notesInLane.RemoveAt(0);
+                NoteInfo _info = new NoteInfo();
+                _info.laneNum = laneNum;
+                _info.button = KeyCode.None;
+                NoteManager.instance.AddNote(_info, NoteManager.instance.currentTime);
             }
+            else
+            {
+                if(notesInLane.Count != 0)
+                {
+                    //Judge Timings
+                    float distance = notesInLane[0].GetComponent<RectTransform>().anchoredPosition.y - hitPoint.GetComponent<RectTransform>().anchoredPosition.y;
+                    Debug.Log(distance);
+                    if(InRange(distance, perfectRange))
+                    {
+                        Debug.Log("Perfect");
+                    }
+                    else if(InRange(distance, greatRange))
+                    {
+                        Debug.Log("Great");
+                    }
+                    else if(InRange(distance, goodRange))
+                    {
+                        Debug.Log("Good");
+                    }
+                    else if(InRange(distance, badRange))
+                    {
+                        Debug.Log("Bad");
+                    }
+                    else
+                    {
+                        return;
+                    }
+                    notesInLane[0].Pool.Release(notesInLane[0].gameObject);
+                    notesInLane.RemoveAt(0);
+                }
+            }
+            hitPoint.GetComponent<Image>().color = Color.red;
+            Invoke("ReturnColor", 0.1f);
+        }
+
+        private void ReturnColor()
+        {
+            hitPoint.GetComponent<Image>().color = Color.white;
         }
 
         private bool InRange(float distance, BoxCollider2D range)
