@@ -28,6 +28,7 @@ public class AudioManager : MonoBehaviour
     [Header("SoundRef")]
     public FMODUnity.EventReference musicEventName; //fmod 이벤트 주소
     public FMODUnity.EventReference sfxEventName;
+
     FMOD.Studio.EventInstance musicInstance;
     FMOD.Studio.EventInstance sfxInstance;
 

@@ -707,7 +707,7 @@ MonoBehaviour:
   MasterBanks:
   - Master
   Banks:
-  - BGM
+  - VRPianoMotion
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

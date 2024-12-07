@@ -1,6 +1,7 @@
 using Meta.XR.MultiplayerBlocks.Fusion.Editor;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -18,6 +19,11 @@ namespace RhythmGame
         private float elapsedTime;
 
         private float y;
+        private ControllerManager controllerManager;
+        public void Start()
+        {
+            controllerManager=GameObject.Find("ControllerManager").GetComponent<ControllerManager>();
+        }
 
         public void SetSpawnTime()
         {
@@ -81,6 +87,9 @@ namespace RhythmGame
         public void Release()
         {
             Pool.Release(this.gameObject);
+            controllerManager.MissVibration(true);
+            controllerManager.MissVibration(false);
+            //Remove From notesInLane
         }
     }
 }
