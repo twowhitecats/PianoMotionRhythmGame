@@ -10,8 +10,8 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 8506578884788072770}
-    m_Position: {x: 379.0849, y: 331.25406, z: 0}
+    m_State: {fileID: 4730563654834754938}
+    m_Position: {x: 517.80396, y: 335.88663, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -21,7 +21,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 8506578884788072770}
+  m_DefaultState: {fileID: 4730563654834754938}
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
@@ -44,14 +44,14 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &8506578884788072770
+--- !u!1102 &4730563654834754938
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BV1a14y1A721_integrated_right
+  m_Name: summer_integrated2_right
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -64,7 +64,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7290836555628613974, guid: 5008e9abf0a333541972988a540e5b5b, type: 3}
+  m_Motion: {fileID: 3630479167752756042, guid: dfac20c889ac5d04aba8c24593d6cf46, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
