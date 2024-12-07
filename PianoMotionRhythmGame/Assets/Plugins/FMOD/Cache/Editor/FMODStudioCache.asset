@@ -92,7 +92,7 @@ MonoBehaviour:
   - {fileID: -6898335981068132378}
   StringsBanks:
   - {fileID: -3472934248635882534}
-  cacheTime: 638691803940622227
+  cacheTime: 638691894277626350
   cacheVersion: 131620
 --- !u!114 &2369936400481095881
 MonoBehaviour:
@@ -109,10 +109,10 @@ MonoBehaviour:
   Path: Assets/HandMotionRhythmGame/audio-manager-fmod/Build/Desktop/VRPianoMotion.bank
   Name: VRPianoMotion
   StudioPath: bank:/VRPianoMotion
-  lastModified: 638691803940556470
+  lastModified: 638691894277626350
   FileSizes:
   - Name: Desktop
-    Value: 4061952
+    Value: 362816
   Exists: 1
 --- !u!114 &4516280318951879558
 MonoBehaviour:
@@ -167,4 +167,4 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 323840
+  Length: 40464
