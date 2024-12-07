@@ -33,10 +33,10 @@ public class AnimationManager : MonoBehaviour
             //LrootBone.position = leftHand.transform.position;
             //RrootBone.position = rightHand.transform.position;
             LrootBone.position = controllerManager.lwrist;
-            LrootBone.rotation = Quaternion.LookRotation(Vector3.Cross(controllerManager.lwrist_up, controllerManager.lwrist_forward).normalized, controllerManager.lwrist_up);
+            LrootBone.rotation = Quaternion.LookRotation(-Vector3.Cross(controllerManager.lwrist_up, controllerManager.lwrist_forward).normalized, controllerManager.lwrist_up);
 
             RrootBone.position = controllerManager.rwrist;
-            RrootBone.rotation = Quaternion.LookRotation(controllerManager.rwrist_up ,Vector3.Cross(controllerManager.rwrist_up, controllerManager.rwrist_forward).normalized);
+            RrootBone.rotation = Quaternion.LookRotation(-controllerManager.rwrist_up ,Vector3.Cross(controllerManager.rwrist_up, controllerManager.rwrist_forward).normalized);
         }
     }
 }

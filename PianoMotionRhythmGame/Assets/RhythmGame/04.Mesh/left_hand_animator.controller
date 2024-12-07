@@ -1,13 +1,13 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1102 &-8075701963630742428
+--- !u!1102 &-6283721570287253732
 AnimatorState:
   serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BV1a14y1A721_integrated_left
+  m_Name: summer_integrated2_left
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -20,7 +20,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 2424685553283170370, guid: a994439b5e3160043bbad4466402ab39, type: 3}
+  m_Motion: {fileID: -7771808426053209944, guid: 713554a06d7124c49b35a2ed435b9897, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -36,8 +36,8 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: -8075701963630742428}
-    m_Position: {x: 428.75812, y: 289.81207, z: 0}
+    m_State: {fileID: -6283721570287253732}
+    m_Position: {x: 382.41443, y: 225.85196, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -47,7 +47,7 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: -8075701963630742428}
+  m_DefaultState: {fileID: -6283721570287253732}
 --- !u!91 &9100000
 AnimatorController:
   m_ObjectHideFlags: 0
