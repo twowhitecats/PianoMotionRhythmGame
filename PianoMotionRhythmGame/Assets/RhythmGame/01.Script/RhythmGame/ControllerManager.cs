@@ -1,3 +1,4 @@
+using Oculus.Interaction;
 using Oculus.Interaction.Input;
 using RhythmGame;
 using System.Collections;
@@ -32,6 +33,7 @@ public class ControllerManager : MonoBehaviour
     public KeyboardManager keyboardManager;
     public MusicController musicController;
     public AnimationManager animationManager;
+    public GameObject camera_offset;
 
     // Start is called before the first frame update
     void Start()
@@ -107,6 +109,11 @@ public class ControllerManager : MonoBehaviour
             musicController.StopMusic();
             animationManager.animation_stop();
         }
+
+        Vector2 leftStick = OVRInput.Get(OVRInput.Axis2D.PrimaryThumbstick);
+        Vector2 rightStick = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
+        Vector3 movement = new Vector3(0, leftStick.y, rightStick.y);
+        camera_offset.transform.Translate(movement * 1.0f * Time.deltaTime, Space.World);
 
         rwrist = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
         rwrist = controllerParent.TransformPoint(rwrist);

@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d2fd40b8a7e73b4f825a2a8d1aaf4dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laneNum: 0
   perfectRange: {fileID: 5258155683095952617}
   greatRange: {fileID: 7357983323743933105}
   goodRange: {fileID: 5670382906925750270}
