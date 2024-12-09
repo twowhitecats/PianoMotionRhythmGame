@@ -1,0 +1,1417 @@
+{
+    "data": [
+        {
+            "targetTime": 5.99399995803833,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 6.271999835968018,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 6.633999824523926,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 6.953999996185303,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 7.38100004196167,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 7.785999774932861,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 8.105999946594239,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 8.489999771118164,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 8.87399959564209,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 9.215999603271485,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 9.642000198364258,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 9.984000205993653,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 10.368000030517579,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 10.751999855041504,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 11.093000411987305,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 11.520000457763672,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 11.861000061035157,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 12.244999885559082,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 12.628999710083008,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 12.970000267028809,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 13.354000091552735,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 13.73799991607666,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 14.079999923706055,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 14.420999526977539,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 14.847999572753907,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 15.232000350952149,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 15.593999862670899,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 16.0,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 16.384000778198243,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 16.725000381469728,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 17.06599998474121,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 17.1299991607666,
+            "notes": [
+                {
+                    "laneNum": 3,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 17.32200050354004,
+            "notes": [
+                {
+                    "laneNum": 4,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 17.450000762939454,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 17.493000030517579,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 17.663999557495118,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 17.856000900268556,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 17.87700080871582,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 18.19700050354004,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 18.218000411987306,
+            "notes": [
+                {
+                    "laneNum": 4,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 18.43199920654297,
+            "notes": [
+                {
+                    "laneNum": 4,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 18.538000106811525,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 18.900999069213868,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 19.305999755859376,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 19.690000534057618,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 20.073999404907228,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 20.15999984741211,
+            "notes": [
+                {
+                    "laneNum": 3,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 20.288000106811525,
+            "notes": [
+                {
+                    "laneNum": 4,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 20.437000274658204,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 20.500999450683595,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 20.649999618530275,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 20.841999053955079,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 20.885000228881837,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 21.22599983215332,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 21.312000274658204,
+            "notes": [
+                {
+                    "laneNum": 3,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 21.440000534057618,
+            "notes": [
+                {
+                    "laneNum": 4,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 21.589000701904298,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 21.909000396728517,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 21.95199966430664,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 22.31399917602539,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 22.31399917602539,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 22.336000442504884,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 22.6560001373291,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 23.082000732421876,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 23.125,
+            "notes": [
+                {
+                    "laneNum": 3,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 23.29599952697754,
+            "notes": [
+                {
+                    "laneNum": 4,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 23.44499969482422,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 23.488000869750978,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 23.764999389648439,
+            "notes": [
+                {
+                    "laneNum": 4,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 23.82900047302246,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 23.957000732421876,
+            "notes": [
+                {
+                    "laneNum": 4,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 24.233999252319337,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 24.256000518798829,
+            "notes": [
+                {
+                    "laneNum": 3,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 24.4689998626709,
+            "notes": [
+                {
+                    "laneNum": 3,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 24.597000122070314,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 24.959999084472658,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 25.364999771118165,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 25.749000549316408,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 26.09000015258789,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 26.15399932861328,
+            "notes": [
+                {
+                    "laneNum": 3,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 26.325000762939454,
+            "notes": [
+                {
+                    "laneNum": 4,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 26.43199920654297,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 26.538000106811525,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 26.79400062561035,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 26.857999801635743,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 26.96500015258789,
+            "notes": [
+                {
+                    "laneNum": 4,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 27.22100067138672,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 27.22100067138672,
+            "notes": [
+                {
+                    "laneNum": 3,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 27.349000930786134,
+            "notes": [
+                {
+                    "laneNum": 4,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 27.604999542236329,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 27.881999969482423,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 27.968000411987306,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 28.30900001525879,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 28.30900001525879,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 28.329999923706056,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 28.714000701904298,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 29.07699966430664,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 29.097999572753908,
+            "notes": [
+                {
+                    "laneNum": 4,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 29.1200008392334,
+            "notes": [
+                {
+                    "laneNum": 3,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 29.461000442504884,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 29.503999710083009,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 29.823999404907228,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 29.88800048828125,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 30.229000091552736,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 30.292999267578126,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 30.441999435424806,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 30.56999969482422,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 30.95400047302246,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 30.996999740600587,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 31.381000518798829,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 31.381000518798829,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 31.701000213623048,
+            "notes": [
+                {
+                    "laneNum": 4,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 31.722000122070314,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 31.957000732421876,
+            "notes": [
+                {
+                    "laneNum": 4,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 32.10599899291992,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 32.448001861572269,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 32.512001037597659,
+            "notes": [
+                {
+                    "laneNum": 3,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 32.6609992980957,
+            "notes": [
+                {
+                    "laneNum": 4,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 32.85300064086914,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 32.85300064086914,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 33.215999603271487,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 33.23699951171875,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 33.40800094604492,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 33.599998474121097,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 33.941001892089847,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 33.98400115966797,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 34.34600067138672,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 34.34600067138672,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 34.6879997253418,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 34.72999954223633,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 34.922000885009769,
+            "notes": [
+                {
+                    "laneNum": 4,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 35.071998596191409,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 35.433998107910159,
+            "notes": [
+                {
+                    "laneNum": 3,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 35.49800109863281,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 35.60499954223633,
+            "notes": [
+                {
+                    "laneNum": 4,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 35.84000015258789,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 35.84000015258789,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 35.96799850463867,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 36.180999755859378,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 36.180999755859378,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 36.39400100708008,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 36.54399871826172,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 36.90599822998047,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 36.94900131225586,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 37.33300018310547,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 37.375999450683597,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 37.71699905395508,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 37.71699905395508,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 38.10100173950195,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 38.165000915527347,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 38.48500061035156,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 38.50600051879883,
+            "notes": [
+                {
+                    "laneNum": 4,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 38.847999572753909,
+            "notes": [
+                {
+                    "laneNum": 0,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 38.9119987487793,
+            "notes": [
+                {
+                    "laneNum": 5,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 39.231998443603519,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 39.637001037597659,
+            "notes": [
+                {
+                    "laneNum": 2,
+                    "button": 0
+                }
+            ]
+        },
+        {
+            "targetTime": 40.0,
+            "notes": [
+                {
+                    "laneNum": 1,
+                    "button": 0
+                }
+            ]
+        }
+    ]
+}
