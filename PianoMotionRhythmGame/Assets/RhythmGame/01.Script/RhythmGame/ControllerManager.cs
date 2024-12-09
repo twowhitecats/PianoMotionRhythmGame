@@ -30,6 +30,8 @@ public class ControllerManager : MonoBehaviour
     private LineRenderer up_R;
 
     public KeyboardManager keyboardManager;
+    public MusicController musicController;
+    public AnimationManager animationManager;
 
     // Start is called before the first frame update
     void Start()
@@ -91,16 +93,19 @@ public class ControllerManager : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger)) //R
         {
             keyboardManager.KeyPress(true);
+
         }
 
         if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))
         {
-
+            musicController.PlayPauseMusic();
+            animationManager.animation_start();
         }
 
         if (OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger))
         {
-
+            musicController.StopMusic();
+            animationManager.animation_stop();
         }
 
         rwrist = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTouch);
