@@ -28,10 +28,15 @@ namespace RhythmGame
 
             File.WriteAllText(path, jsonData);
         }
-        public void LoadJSON()
+        public void LoadJSON(string filename)
         {
             chart.Clear();
-            string path = Path.Combine(Application.streamingAssetsPath, "JSON/" + fileName + ".json");
+            chart = LoadFromJSON(filename);
+        }
+        public List<NoteTiming> LoadFromJSON(string filename)
+        {
+            var _result = new List<NoteTiming>();
+            string path = Path.Combine(Application.streamingAssetsPath, "JSON/" + filename + ".json");
             string jsonData = File.ReadAllText(path);
 
             Debug.Log(jsonData);
@@ -43,9 +48,11 @@ namespace RhythmGame
             {
                 for (int i = 0; i < data.data.Count; i++)
                 {
-                    chart.Add(data.data[i]);
+                    _result.Add(data.data[i]);
                 }
             }
+
+            return _result;
         }
 
         [Serializable]

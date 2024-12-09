@@ -17,7 +17,7 @@ namespace RhythmGame
             }
             if (GUILayout.Button("Load JSON"))
             {
-                parser.LoadJSON();
+                parser.LoadJSON(parser.fileName);
             }
         }
     }

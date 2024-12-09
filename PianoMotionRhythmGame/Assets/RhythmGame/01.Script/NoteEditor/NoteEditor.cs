@@ -94,7 +94,6 @@ namespace RhythmGame
         {
             noteToEdit.Release();
             var result = editingNotes.Find(timing => timing.targetTime == this.targetTime && timing.notes.Contains(noteinfoToEdit));
-            Debug.Log(result);
             editingNotes.Remove(result);
         }
         private void ChangeNoteToEdit()
@@ -137,6 +136,11 @@ namespace RhythmGame
 
             filename = input_filename.text;
             parser.GenerateJSON(filename, _notes);
+        }
+        public void LoadFromJson()
+        {
+            filename = input_filename.text;
+            editingNotes = parser.LoadFromJSON(filename);
         }
 
         List<NoteTiming> MergeGroupedNotes(List<NoteTiming> editingNotes, float threshold)

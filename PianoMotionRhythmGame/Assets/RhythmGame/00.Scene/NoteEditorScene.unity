@@ -549,7 +549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069c7595e40b8ba4f8a2e8e90f562638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMode: 0
+  currentMode: 1
   gameStart: 1
   currentTime: 0
   obj_note: {fileID: 7057802410097846634, guid: a71a3f76f23c2ab428c1b1f788859358, type: 3}
@@ -6743,7 +6743,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 79489120}
         m_TargetAssemblyTypeName: RhythmGame.NoteEditor, Assembly-CSharp
-        m_MethodName: SaveToJson
+        m_MethodName: LoadFromJson
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
