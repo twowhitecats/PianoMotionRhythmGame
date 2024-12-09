@@ -18695,13 +18695,13 @@ MonoBehaviour:
     notes:
     - laneNum: 2
       button: 0
-  - targetTime: 29.098
-    notes:
-    - laneNum: 4
-      button: 0
   - targetTime: 29.12
     notes:
     - laneNum: 3
+      button: 0
+  - targetTime: 29.25
+    notes:
+    - laneNum: 4
       button: 0
   - targetTime: 29.461
     notes:
@@ -18745,11 +18745,11 @@ MonoBehaviour:
       button: 0
   - targetTime: 31.381
     notes:
-    - laneNum: 5
+    - laneNum: 0
       button: 0
   - targetTime: 31.381
     notes:
-    - laneNum: 0
+    - laneNum: 5
       button: 0
   - targetTime: 31.701
     notes:

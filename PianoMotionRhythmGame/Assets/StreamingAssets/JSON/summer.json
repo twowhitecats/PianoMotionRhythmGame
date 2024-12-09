@@ -874,19 +874,19 @@
             ]
         },
         {
-            "targetTime": 29.097999572753908,
+            "targetTime": 29.1200008392334,
             "notes": [
                 {
-                    "laneNum": 4,
+                    "laneNum": 3,
                     "button": 0
                 }
             ]
         },
         {
-            "targetTime": 29.1200008392334,
+            "targetTime": 29.25,
             "notes": [
                 {
-                    "laneNum": 3,
+                    "laneNum": 4,
                     "button": 0
                 }
             ]
@@ -985,7 +985,7 @@
             "targetTime": 31.381000518798829,
             "notes": [
                 {
-                    "laneNum": 5,
+                    "laneNum": 0,
                     "button": 0
                 }
             ]
@@ -994,7 +994,7 @@
             "targetTime": 31.381000518798829,
             "notes": [
                 {
-                    "laneNum": 0,
+                    "laneNum": 5,
                     "button": 0
                 }
             ]
