@@ -19763,6 +19763,10 @@ PrefabInstance:
       value: ControllerManager
       objectReference: {fileID: 0}
     - target: {fileID: 8670680626689875889, guid: a5b0a0bfe1a77994ba84024738dd7c6d, type: 3}
+      propertyPath: camera_offset
+      value: 
+      objectReference: {fileID: 280425491}
+    - target: {fileID: 8670680626689875889, guid: a5b0a0bfe1a77994ba84024738dd7c6d, type: 3}
       propertyPath: keyboardManager
       value: 
       objectReference: {fileID: 1509502133}
