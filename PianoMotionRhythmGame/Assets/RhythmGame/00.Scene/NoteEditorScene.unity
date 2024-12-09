@@ -549,7 +549,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 069c7595e40b8ba4f8a2e8e90f562638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentMode: 1
+  currentMode: 0
   gameStart: 1
   currentTime: 0
   obj_note: {fileID: 7057802410097846634, guid: a71a3f76f23c2ab428c1b1f788859358, type: 3}
@@ -18305,45 +18305,635 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 414ed92edd16a8a4bb6a6e0c7b7bb198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileName: qwer
+  fileName: summer
   chart:
-  - targetTime: 2.709
+  - targetTime: 5.994
     notes:
     - laneNum: 0
       button: 0
-  - targetTime: 2.73
-    notes:
-    - laneNum: 3
-      button: 0
-  - targetTime: 4.117
+  - targetTime: 6.272
     notes:
     - laneNum: 1
       button: 0
-  - targetTime: 4.138
-    notes:
-    - laneNum: 4
-      button: 0
-  - targetTime: 5.696
-    notes:
-    - laneNum: 5
-      button: 0
-  - targetTime: 5.717
+  - targetTime: 6.634
     notes:
     - laneNum: 2
       button: 0
-  - targetTime: 7.338
-    notes:
-    - laneNum: 0
-      button: 0
-  - targetTime: 7.36
-    notes:
-    - laneNum: 3
-      button: 0
-  - targetTime: 8.853
+  - targetTime: 6.954
     notes:
     - laneNum: 1
       button: 0
+  - targetTime: 7.381
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 7.786
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 8.106
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 8.49
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 8.874
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 9.216
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 9.642
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 9.984
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 10.368
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 10.752
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 11.093
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 11.52
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 11.861
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 12.245
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 12.629
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 12.97
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 13.354
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 13.738
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 14.08
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 14.421
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 14.848
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 15.232
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 15.594
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 16
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 16.384
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 16.725
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 17.066
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 17.13
+    notes:
+    - laneNum: 3
+      button: 0
+  - targetTime: 17.322
+    notes:
     - laneNum: 4
+      button: 0
+  - targetTime: 17.45
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 17.493
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 17.664
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 17.856
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 17.877
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 18.197
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 18.218
+    notes:
+    - laneNum: 4
+      button: 0
+  - targetTime: 18.432
+    notes:
+    - laneNum: 4
+      button: 0
+  - targetTime: 18.538
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 18.901
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 19.306
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 19.69
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 20.074
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 20.16
+    notes:
+    - laneNum: 3
+      button: 0
+  - targetTime: 20.288
+    notes:
+    - laneNum: 4
+      button: 0
+  - targetTime: 20.437
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 20.501
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 20.65
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 20.842
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 20.885
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 21.226
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 21.312
+    notes:
+    - laneNum: 3
+      button: 0
+  - targetTime: 21.44
+    notes:
+    - laneNum: 4
+      button: 0
+  - targetTime: 21.589
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 21.909
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 21.952
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 22.314
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 22.314
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 22.336
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 22.656
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 23.082
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 23.125
+    notes:
+    - laneNum: 3
+      button: 0
+  - targetTime: 23.296
+    notes:
+    - laneNum: 4
+      button: 0
+  - targetTime: 23.445
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 23.488
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 23.765
+    notes:
+    - laneNum: 4
+      button: 0
+  - targetTime: 23.829
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 23.957
+    notes:
+    - laneNum: 4
+      button: 0
+  - targetTime: 24.234
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 24.256
+    notes:
+    - laneNum: 3
+      button: 0
+  - targetTime: 24.469
+    notes:
+    - laneNum: 3
+      button: 0
+  - targetTime: 24.597
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 24.96
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 25.365
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 25.749
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 26.09
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 26.154
+    notes:
+    - laneNum: 3
+      button: 0
+  - targetTime: 26.325
+    notes:
+    - laneNum: 4
+      button: 0
+  - targetTime: 26.432
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 26.538
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 26.794
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 26.858
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 26.965
+    notes:
+    - laneNum: 4
+      button: 0
+  - targetTime: 27.221
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 27.221
+    notes:
+    - laneNum: 3
+      button: 0
+  - targetTime: 27.349
+    notes:
+    - laneNum: 4
+      button: 0
+  - targetTime: 27.605
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 27.882
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 27.968
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 28.309
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 28.309
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 28.33
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 28.714
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 29.077
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 29.098
+    notes:
+    - laneNum: 4
+      button: 0
+  - targetTime: 29.12
+    notes:
+    - laneNum: 3
+      button: 0
+  - targetTime: 29.461
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 29.504
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 29.824
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 29.888
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 30.229
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 30.293
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 30.442
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 30.57
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 30.954
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 30.997
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 31.381
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 31.381
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 31.701
+    notes:
+    - laneNum: 4
+      button: 0
+  - targetTime: 31.722
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 31.957
+    notes:
+    - laneNum: 4
+      button: 0
+  - targetTime: 32.106
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 32.448
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 32.512
+    notes:
+    - laneNum: 3
+      button: 0
+  - targetTime: 32.661
+    notes:
+    - laneNum: 4
+      button: 0
+  - targetTime: 32.853
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 32.853
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 33.216
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 33.237
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 33.408
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 33.6
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 33.941
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 33.984
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 34.346
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 34.346
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 34.688
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 34.73
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 34.922
+    notes:
+    - laneNum: 4
+      button: 0
+  - targetTime: 35.072
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 35.434
+    notes:
+    - laneNum: 3
+      button: 0
+  - targetTime: 35.498
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 35.605
+    notes:
+    - laneNum: 4
+      button: 0
+  - targetTime: 35.84
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 35.84
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 35.968
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 36.181
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 36.181
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 36.394
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 36.544
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 36.906
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 36.949
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 37.333
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 37.376
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 37.717
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 37.717
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 38.101
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 38.165
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 38.485
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 38.506
+    notes:
+    - laneNum: 4
+      button: 0
+  - targetTime: 38.848
+    notes:
+    - laneNum: 0
+      button: 0
+  - targetTime: 38.912
+    notes:
+    - laneNum: 5
+      button: 0
+  - targetTime: 39.232
+    notes:
+    - laneNum: 1
+      button: 0
+  - targetTime: 39.637
+    notes:
+    - laneNum: 2
+      button: 0
+  - targetTime: 40
+    notes:
+    - laneNum: 1
       button: 0
 --- !u!1 &1901073213
 GameObject:

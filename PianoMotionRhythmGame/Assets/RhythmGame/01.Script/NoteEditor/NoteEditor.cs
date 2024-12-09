@@ -126,16 +126,16 @@ namespace RhythmGame
 
         public void SaveToJson()
         {
-            _notes = MergeGroupedNotes(editingNotes, 0.05f);
+            editingNotes.Sort((a, b) => a.targetTime.CompareTo(b.targetTime));
 
             // 결과 출력
-            foreach (var noteTiming in _notes)
-            {
-                Debug.Log($"Note ID: {noteTiming.notes[0].laneNum}, TargetTime: {noteTiming.targetTime}");
-            }
+            //foreach (var noteTiming in _notes)
+            //{
+            //    Debug.Log($"Note ID: {noteTiming.notes[0].laneNum}, TargetTime: {noteTiming.targetTime}");
+            //}
 
             filename = input_filename.text;
-            parser.GenerateJSON(filename, _notes);
+            parser.GenerateJSON(filename, editingNotes);
         }
         public void LoadFromJson()
         {

@@ -47,12 +47,6 @@ namespace RhythmGame
                 }
 
                 Move();
-
-                if(CheckEnd())
-                {
-                    speed = 0;
-                    Miss();
-                }
             }
             else if(NoteManager.instance.currentMode == Mode.Editing)
             {
@@ -70,7 +64,7 @@ namespace RhythmGame
                 }
             }
         }
-        private bool CheckEnd()
+        public bool CheckEnd()
         {
             return this.GetComponent<RectTransform>().anchoredPosition.y <= -500;
         }
@@ -81,11 +75,10 @@ namespace RhythmGame
             this.GetComponent<RectTransform>().anchoredPosition = new Vector2(this.GetComponent<RectTransform>().anchoredPosition.x, y);
         }
 
-        private void Miss()
+        public void Miss()
         {
             Pool.Release(this.gameObject);
             Debug.Log("Miss");
-            //Remove From notesInLane
             ScoreManager._instance.NoteMiss();
         }
         public void Release()
