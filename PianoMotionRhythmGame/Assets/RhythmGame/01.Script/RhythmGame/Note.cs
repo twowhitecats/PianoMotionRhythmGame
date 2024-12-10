@@ -18,8 +18,11 @@ namespace RhythmGame
 
         private float elapsedTime;
 
+        private int laneNum;
+
         private float y;
         private ControllerManager controllerManager;
+
         public void Start()
         {
             controllerManager=GameObject.Find("ControllerManager").GetComponent<ControllerManager>();
@@ -44,12 +47,6 @@ namespace RhythmGame
                 }
 
                 Move();
-
-                if(CheckEnd())
-                {
-                    speed = 0;
-                    Miss();
-                }
             }
             else if(NoteManager.instance.currentMode == Mode.Editing)
             {
@@ -67,7 +64,7 @@ namespace RhythmGame
                 }
             }
         }
-        private bool CheckEnd()
+        public bool CheckEnd()
         {
             return this.GetComponent<RectTransform>().anchoredPosition.y <= -500;
         }
@@ -78,11 +75,10 @@ namespace RhythmGame
             this.GetComponent<RectTransform>().anchoredPosition = new Vector2(this.GetComponent<RectTransform>().anchoredPosition.x, y);
         }
 
-        private void Miss()
+        public void Miss()
         {
             Pool.Release(this.gameObject);
             Debug.Log("Miss");
-            //Remove From notesInLane
             ScoreManager._instance.NoteMiss();
         }
         public void Release()
@@ -91,6 +87,18 @@ namespace RhythmGame
             controllerManager.MissVibration(true);
             controllerManager.MissVibration(false);
             //Remove From notesInLane
+        }
+
+        public void SetLaneNum(int num)
+        {
+            this.laneNum = num;
+        }
+        public int GetLaneNum() => laneNum;
+
+        public void OnEdit()
+        {
+            NoteEditor noteEditor = GameObject.Find("NoteEditor").GetComponent<NoteEditor>();
+            noteEditor.SetNoteToEdit(this);
         }
     }
 }

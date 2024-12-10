@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 
 namespace RhythmGame
@@ -13,20 +12,135 @@ namespace RhythmGame
         [SerializeField] private JSONParser parser;
         [SerializeField] private TMP_InputField input_filename;
 
+        [SerializeField] private TMP_InputField input_targetTime;
+
+        private Note noteToEdit;
+        private NoteInfo noteinfoToEdit;
+        private float targetTime;
+        private int laneNum;
+
         private string filename;
+
+        public void SetNoteToEdit(Note note)
+        {
+            this.noteToEdit = note;
+            this.targetTime = note.targetTime;
+
+            this.noteinfoToEdit = new NoteInfo();
+            noteinfoToEdit.laneNum = note.GetLaneNum();
+
+            input_targetTime.text = note.targetTime.ToString();
+        }
+        public void SetNoteLane0()
+        {
+            RemoveCurrentNote();
+            noteinfoToEdit.laneNum = 0;
+            SetNoteTargetTime();
+            ChangeNoteToEdit();
+
+            EditList();
+        }
+        public void SetNoteLane1()
+        {
+            RemoveCurrentNote();
+            noteinfoToEdit.laneNum = 1;
+            SetNoteTargetTime();
+            ChangeNoteToEdit();
+
+            EditList();
+        }
+        public void SetNoteLane2()
+        {
+            RemoveCurrentNote();
+            noteinfoToEdit.laneNum = 2;
+            SetNoteTargetTime();
+            ChangeNoteToEdit();
+
+            EditList();
+        }
+        public void SetNoteLane3()
+        {
+            RemoveCurrentNote();
+            noteinfoToEdit.laneNum = 3;
+            SetNoteTargetTime();
+            ChangeNoteToEdit();
+
+            EditList();
+        }
+        public void SetNoteLane4()
+        {
+            RemoveCurrentNote();
+            noteinfoToEdit.laneNum = 4;
+            SetNoteTargetTime();
+            ChangeNoteToEdit();
+
+            EditList();
+        }
+        public void SetNoteLane5()
+        {
+            RemoveCurrentNote();
+            noteinfoToEdit.laneNum = 5;
+            SetNoteTargetTime();
+            ChangeNoteToEdit();
+
+            EditList();
+        }
+
+        private void SetNoteTargetTime()
+        {
+            this.targetTime = float.Parse(input_targetTime.text);
+        }
+        public void RemoveCurrentNote()
+        {
+            noteToEdit.Release();
+            var result = editingNotes.Find(timing => timing.targetTime == this.targetTime && timing.notes.Contains(noteinfoToEdit));
+            editingNotes.Remove(result);
+        }
+        private void ChangeNoteToEdit()
+        {
+            var go = NoteManager.instance.NotePool.Get();
+            go.GetComponent<RectTransform>().anchoredPosition = new Vector2(-540+215*noteinfoToEdit.laneNum+2.5f, 480);
+            go.GetComponent<Note>().targetTime = targetTime;
+            go.GetComponent<Note>().SetSpawnTime();
+            go.GetComponent<Note>().SetLaneNum(noteinfoToEdit.laneNum);
+
+            noteToEdit = go.GetComponent<Note>();
+        }
+        private void EditList()
+        {
+            var noteTiming = new NoteTiming();
+            noteTiming.targetTime = targetTime;
+            noteTiming.notes = new List<NoteInfo>{ noteinfoToEdit };
+            editingNotes.Add(noteTiming);
+        }
+
+        public void SpawnEditedNote()
+        {
+            RemoveCurrentNote();
+
+            SetNoteTargetTime();
+            ChangeNoteToEdit();
+
+            EditList();
+        }
 
         public void SaveToJson()
         {
-            _notes = MergeGroupedNotes(editingNotes, 0.05f);
+            editingNotes.Sort((a, b) => a.targetTime.CompareTo(b.targetTime));
 
             // 결과 출력
-            foreach (var noteTiming in _notes)
-            {
-                Debug.Log($"Note ID: {noteTiming.notes[0].laneNum}, TargetTime: {noteTiming.targetTime}");
-            }
+            //foreach (var noteTiming in _notes)
+            //{
+            //    Debug.Log($"Note ID: {noteTiming.notes[0].laneNum}, TargetTime: {noteTiming.targetTime}");
+            //}
 
             filename = input_filename.text;
-            parser.GenerateJSON(filename, _notes);
+            parser.GenerateJSON(filename, editingNotes);
+        }
+        public void LoadFromJson()
+        {
+            filename = input_filename.text;
+            editingNotes = parser.LoadFromJSON(filename);
         }
 
         List<NoteTiming> MergeGroupedNotes(List<NoteTiming> editingNotes, float threshold)

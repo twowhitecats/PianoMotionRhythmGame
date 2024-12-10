@@ -38,6 +38,21 @@ namespace RhythmGame
                 }
             }
         }
+        private void Update()
+        {
+            if(NoteManager.instance.currentMode == Mode.Game)
+            {
+                for(int i = 0; i < notesInLane.Count; i++)
+                {
+                    if (notesInLane[i].CheckEnd())
+                    {
+                        notesInLane[i].Miss();
+                        notesInLane.RemoveAt(i);
+                        i--;
+                    }
+                }
+            }
+        }
 
         public void SpawnNote(float targetTime, KeyCode code)
         {
@@ -47,6 +62,7 @@ namespace RhythmGame
             go.GetComponent<Note>().targetTime = targetTime;
             go.GetComponent<Note>().keyToPress = code;
             go.GetComponent<Note>().SetSpawnTime();
+            go.GetComponent<Note>().SetLaneNum(laneNum);
 
             notesInLane.Add(go.GetComponent<Note>());
         }

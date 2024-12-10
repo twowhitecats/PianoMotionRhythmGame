@@ -62,21 +62,21 @@ namespace RhythmGame
         }
         void ValidateTimeInput(string input)
         {
-            // Á¤±Ô½ÄÀ» »ç¿ëÇØ ÀÔ·ÂµÈ °ªÀÌ ¿Ã¹Ù¸¥ Çü½ÄÀÎÁö È®ÀÎ
+            // ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·Âµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ã¹Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½
             string validPattern = @"^\d{0,2}(:\d{0,2})?(:\d{0,3})?$";
             if (!Regex.IsMatch(input, validPattern))
             {
-                // Àß¸øµÈ ÀÔ·ÂÀÌ µé¾î¿À¸é ÅØ½ºÆ®¸¦ ÃÊ±âÈ­
+                // ï¿½ß¸ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ø½ï¿½Æ®ï¿½ï¿½ ï¿½Ê±ï¿½È­
                 timeInputField.text = "";
             }
         }
 
-        // ÀÔ·Â ¿Ï·á ½Ã ÃÖÁ¾ Çü½ÄÈ­
+        // ï¿½Ô·ï¿½ ï¿½Ï·ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È­
         void FormatTimeInput(string input)
         {
             if (string.IsNullOrEmpty(input)) return;
 
-            // ÀÔ·Â °ª¿¡¼­ mm, ss, fff ºÐ¸®
+            // ï¿½Ô·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ mm, ss, fff ï¿½Ð¸ï¿½
             string[] parts = input.Split(':');
             int minutes = 0;
             int seconds = 0;
@@ -84,20 +84,20 @@ namespace RhythmGame
 
             if (parts.Length > 0 && int.TryParse(parts[0], out int parsedMinutes))
             {
-                minutes = Mathf.Clamp(parsedMinutes, 0, 99); // 99ºÐ Á¦ÇÑ
+                minutes = Mathf.Clamp(parsedMinutes, 0, 99); // 99ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             }
 
             if (parts.Length > 1 && int.TryParse(parts[1], out int parsedSeconds))
             {
-                seconds = Mathf.Clamp(parsedSeconds, 0, 59); // 59ÃÊ Á¦ÇÑ
+                seconds = Mathf.Clamp(parsedSeconds, 0, 59); // 59ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
             }
 
             if (parts.Length > 2 && int.TryParse(parts[2], out int parsedMilliseconds))
             {
-                milliseconds = Mathf.Clamp(parsedMilliseconds, 0, 999); // 999ms Á¦ÇÑ
+                milliseconds = Mathf.Clamp(parsedMilliseconds, 0, 999); // 999ms ï¿½ï¿½ï¿½ï¿½
             }
 
-            // ÃÖÁ¾ Æ÷¸ËÆÃ
+            // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
             timeInputField.text = $"{minutes:00}:{seconds:00}:{milliseconds:000}";
 
             int position = minutes * 60*1000 + seconds * 1000 + milliseconds;
