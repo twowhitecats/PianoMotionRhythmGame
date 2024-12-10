@@ -26,7 +26,7 @@ public class AudioManager : MonoBehaviour
     }
 
     [Header("SoundRef")]
-    public FMODUnity.EventReference musicEventName; //fmod ÀÌº¥Æ® ÁÖ¼Ò
+    public FMODUnity.EventReference musicEventName; //fmod ì´ë²¤íŠ¸ ì£¼ì†Œ
     public FMODUnity.EventReference sfxEventName;
 
     FMOD.Studio.EventInstance musicInstance;
@@ -35,13 +35,15 @@ public class AudioManager : MonoBehaviour
     [Header("Sound Setting")]
     public float musicVolume = 4.0f;
     public float sfxVolume = 1.0f;
-    public int BPM = 146; // °î µû¶ó Á÷Á¢ ÀÔ·Â ÇÊ¿ä.. º» bpmÀº kanon bpm
+    public int BPM = 146; // ê³¡ ë”°ë¼ ì§ì ‘ ì…ë ¥ í•„ìš”.. ë³¸ bpmì€ kanon bpm
 
 
 
-    int currentTime = 0; //¹Ğ¸®ÃÊ
+    int currentTime = 0; //ë°€ë¦¬ì´ˆ
     int currentTick = 0;
-    [SerializeField] int startDelay = 5400;
+
+    int startDelay = 5500;
+
     int ticktime = 0;
 
 
@@ -69,7 +71,11 @@ public class AudioManager : MonoBehaviour
 
         //StartMusic();
     }
-
+    private void Start()
+    {
+        StartMusic();
+        
+    }
 
 
     // Update is called once per frame
@@ -90,11 +96,11 @@ public class AudioManager : MonoBehaviour
             currentTick += 1;
             sfxInstance.start();
         }
+
     }
 
     private void FixedUpdate()
     {
-
     }
     void OnDestroy()
     {
@@ -102,7 +108,7 @@ public class AudioManager : MonoBehaviour
         musicInstance.release();
     }
 
-    public void StartMusic() //À½¾Ç ½ÃÀÛ
+    public void StartMusic() //ìŒì•… ì‹œì‘
     {
         if(PlaybackState(musicInstance) != FMOD.Studio.PLAYBACK_STATE.PLAYING)
         {
@@ -145,14 +151,14 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    FMOD.Studio.PLAYBACK_STATE PlaybackState(FMOD.Studio.EventInstance instance) //À½¾Ç Àç»ı»óÅÂ enum°ªÀ¸·Î ¹İÈ¯ https://www.fmod.com/docs/2.02/api/studio-api-common.html#fmod_studio_playback_state
+    FMOD.Studio.PLAYBACK_STATE PlaybackState(FMOD.Studio.EventInstance instance) //ìŒì•… ì¬ìƒìƒíƒœ enumê°’ìœ¼ë¡œ ë°˜í™˜ https://www.fmod.com/docs/2.02/api/studio-api-common.html#fmod_studio_playback_state
     {
         FMOD.Studio.PLAYBACK_STATE pS;
         instance.getPlaybackState(out pS);
         return pS;
     }
 
-    public int GetTime() //bgm ¹Ğ¸®ÃÊ ¹İÈ¯
+    public int GetTime() //bgm ë°€ë¦¬ì´ˆ ë°˜í™˜
     {
         musicInstance.getTimelinePosition(out int position);
         return position;
@@ -162,12 +168,12 @@ public class AudioManager : MonoBehaviour
     {
         FMOD.Studio.EventDescription eventDescription;
 
-        // ÀÌº¥Æ® ¼³¸í °¡Á®¿À±â
+        // ì´ë²¤íŠ¸ ì„¤ëª… ê°€ì ¸ì˜¤ê¸°
         musicInstance.getDescription(out eventDescription);
 
-        // ÀÌº¥Æ®ÀÇ ÃÑ ±æÀÌ °¡Á®¿À±â
+        // ì´ë²¤íŠ¸ì˜ ì´ ê¸¸ì´ ê°€ì ¸ì˜¤ê¸°
         int length;
-        eventDescription.getLength(out length); // ±æÀÌ´Â ¹Ğ¸®ÃÊ ´ÜÀ§·Î ¹İÈ¯µÊ
+        eventDescription.getLength(out length); // ê¸¸ì´ëŠ” ë°€ë¦¬ì´ˆ ë‹¨ìœ„ë¡œ ë°˜í™˜ë¨
 
         return length;
     }
