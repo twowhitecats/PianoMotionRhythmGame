@@ -140,7 +140,7 @@ public class ScoreManager : MonoBehaviour
             ComboText.text = string.Format($"Combo {Combo}");
         }
         int Digit =((int)totalScore).ToString().Length;
-        scoreText.text = (int)totalScore.ToString().PadLeft(scoreDigit, '0');
+        scoreText.text = totalScore.ToString().PadLeft(scoreDigit, '0');
         JudgeText.text = recentJudge.ToString();
 
         switch (recentJudge)
